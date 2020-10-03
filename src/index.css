@@ -24,3 +24,19 @@ code {
 .informationItemsContainer {
   width: 80%;
 }
+
+.searchContainer {
+  overflow: auto;
+}
+
+.searchContainer input {
+  background: #282c34;
+  border: 1px solid #000;
+  color: #FFF;
+  height: 30px;
+}
+
+.searchContainer .button {
+  margin-left: 5px;
+  width: 100px;
+}

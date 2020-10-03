@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import ItemsContainer from './containers/stages/ItemsContainer';
+import SearchContainer from './containers/stages/SearchContainer';
 import { Provider } from 'react-redux';
 import { applyMiddleware, createStore } from 'redux';
 import reducers from './reducers/reducers';
@@ -17,15 +18,18 @@ else {
 }
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-          <Provider store={store}>
-            <ItemsContainer/>
-          </Provider>
-      </header>
-    </div>
-  );
+    return (
+        <Provider store={store}>
+            <div className="App">
+                <header className="App-header">
+                    <SearchContainer/>
+                </header>
+                <div className="App-content">
+                    <ItemsContainer/>
+                </div>
+            </div>
+        </Provider>
+    );
 }
 
 export default App;
