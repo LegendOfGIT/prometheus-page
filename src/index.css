@@ -13,12 +13,18 @@ code {
 }
 
 .informationItem {
+  align-items: center;
+  display: grid;
   float: left;
+  min-height: 400px;
+  overflow: auto;
   padding-left: 5px;
 }
 
 .informationItem__image {
-  width: 450px;
+  max-width: 250px;
+  max-height: 350px;
+  min-width: 250px;
 }
 
 .informationItemsContainer {
