@@ -31,6 +31,21 @@ code {
   width: 80%;
 }
 
+.navigationItemSeparator {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.navigationContainer {
+  display: flex;
+  font-size: 0.9em;
+  overflow: auto;
+}
+
+.navigationItem {
+  text-transform: uppercase;
+}
+
 .searchContainer {
   overflow: auto;
 }

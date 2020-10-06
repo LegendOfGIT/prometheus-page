@@ -7,6 +7,7 @@ import { applyMiddleware, createStore } from 'redux';
 import reducers from './reducers/reducers';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import NavigationContainer from './containers/stages/NavigationContainer';
 
 let store;
 
@@ -22,6 +23,7 @@ function App() {
         <Provider store={store}>
             <div className="App">
                 <header className="App-header">
+                    <NavigationContainer />
                     <SearchContainer/>
                 </header>
                 <div className="App-content">
