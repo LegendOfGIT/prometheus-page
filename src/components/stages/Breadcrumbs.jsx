@@ -1,11 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const NavigationContainer = ({ breadCrumbElements, isFirstNavigationLevel, isLastNavigationLevel, navigationAllLabel, setCurrentNavigation, setNavigationMode }) => {
+const NavigationContainer = (
+    {
+        breadCrumbElements,
+        isFirstNavigationLevel,
+        isLastNavigationLevel,
+        navigationAllLabel,
+        setCurrentNavigation,
+        setNavigationMode
+    }
+) => {
     return <div className={'navigationContainer'}>
         <div className={'navigationItem'}>
         { isFirstNavigationLevel ? navigationAllLabel : (
-            <a onClick={() => { setCurrentNavigation('ALL'); }}>{navigationAllLabel}</a>
+            <a onClick={() => { setCurrentNavigation(); }}>{navigationAllLabel}</a>
         )}
         </div>
 

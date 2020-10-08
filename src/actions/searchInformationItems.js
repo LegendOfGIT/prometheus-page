@@ -1,7 +1,7 @@
 import getInformationItemsRepository from '../repositories/getInformationItemsRepository';
 
-export default (searchPattern) => (dispatch) => {
-    getInformationItemsRepository(searchPattern)
+export default (navigationId, searchPattern) => (dispatch) => {
+    getInformationItemsRepository(searchPattern, navigationId)
         .then((items) => {
             dispatch({ type: 'ADD_INFORMATION_ITEMS', items })
         })

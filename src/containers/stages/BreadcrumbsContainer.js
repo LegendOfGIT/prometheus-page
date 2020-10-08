@@ -4,6 +4,7 @@ import getTranslation from '../../helpers/getTranslation';
 import { bindActionCreators } from 'redux';
 import setCurrentNavigation from '../../actions/setCurrentNavigation';
 import setNavigationMode from '../../actions/setNavigationMode';
+import { FIRST_LEVEL_NAVIGATION_ID } from '../../constants';
 
 const mapStateToProps = (state) => {
     const { activeNavigation, paths } = state.navigation;
@@ -24,7 +25,7 @@ const mapStateToProps = (state) => {
         }
 
         let parentNavigationElement = (paths.find((path) => navigationElement === path.to) || {}).from;
-        parentNavigationElement = 'ALL' === parentNavigationElement ? undefined : parentNavigationElement;
+        parentNavigationElement = FIRST_LEVEL_NAVIGATION_ID === parentNavigationElement ? undefined : parentNavigationElement;
 
         if (parentNavigationElement) {
             addParentNavigationElement(parentNavigationElement);
@@ -40,7 +41,7 @@ const mapStateToProps = (state) => {
     }));
 
     return {
-        isFirstNavigationLevel : 'ALL' === activeNavigation,
+        isFirstNavigationLevel : FIRST_LEVEL_NAVIGATION_ID === activeNavigation,
         isLastNavigationLevel,
         breadCrumbElements,
         navigationAllLabel: getTranslation(state, 'NAVIGATION_ALL')

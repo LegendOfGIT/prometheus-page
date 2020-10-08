@@ -1,7 +1,8 @@
 import navigation from '../configs/navigation';
+import { FIRST_LEVEL_NAVIGATION_ID } from '../constants';
 
 const defaultState = {
-    activeNavigation: 'ALL',
+    activeNavigation: FIRST_LEVEL_NAVIGATION_ID,
     navigationMode: 'breadcrumbs',
     paths: navigation
 };

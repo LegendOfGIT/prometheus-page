@@ -1,0 +1,1 @@
+export const FIRST_LEVEL_NAVIGATION_ID = 'ALL';
