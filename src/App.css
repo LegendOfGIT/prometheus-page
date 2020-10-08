@@ -22,6 +22,9 @@
   font-size: calc(10px + 2vmin);
   justify-content: center;
   min-height: 15vh;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
 }
 
 .App-link {
@@ -35,6 +38,8 @@
   flex-direction: column;
   min-height: 75vh;
   padding-top: 10px;
+  position: relative;
+  top: 15vh;
 }
 
 @keyframes App-logo-spin {

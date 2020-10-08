@@ -38,12 +38,17 @@ code {
 
 .navigationContainer {
   display: flex;
-  font-size: 0.9em;
+  font-size: 0.8em;
   overflow: auto;
 }
 
 .navigationItem {
+  font-size: large;
   text-transform: uppercase;
+}
+.navigationItem a {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .searchContainer {

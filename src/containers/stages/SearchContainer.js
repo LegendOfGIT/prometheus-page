@@ -3,7 +3,7 @@ import Items from '../../components/stages/Search';
 import searchInformationItems from '../../actions/searchInformationItems';
 import { bindActionCreators } from 'redux';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = () => {
     return {
         searchButtonLabel: 'suchen',
         searchTextPlaceholder: 'Suchbegriff'
