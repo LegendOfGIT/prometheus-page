@@ -1,6 +1,6 @@
 import config from '../config';
 
-export default (navigationId) => (dispatch) => {
+export default (navigationId) => (dispatch) => new Promise((resolve) => {
     const getInformationItemsRepository =
         (config.useMocks ?? true)
             ? require('../repositories/getInformationItemsMockRepository').default
@@ -9,8 +9,9 @@ export default (navigationId) => (dispatch) => {
     getInformationItemsRepository(undefined, navigationId)
         .then((items) => {
             dispatch({ type: 'ADD_INFORMATION_ITEMS', items })
+            resolve();
         })
         .catch(() => {
-            //  nothing to do here
+            resolve();
         });
-};
+});
