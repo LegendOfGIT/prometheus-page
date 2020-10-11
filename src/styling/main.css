@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+@keyframes right-rotation {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/** Bare HTML elements **/
+html {
+  background: #f1f1f1; }
+
+input {
+  box-sizing: border-box; }
+
+img {
+  display: block;
+  height: auto;
+  width: 100%; }
+
+p {
+  hyphens: auto;
+  line-height: 1.4em;
+  word-wrap: break-word;
+  overflow-wrap: break-word; }
+
+button {
+  cursor: pointer; }
+
+.prometheus-header {
+  align-items: center;
+  background: #355f7d;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Overpass', sans-serif;
+  font-size: calc(10px + 2vmin);
+  justify-content: center;
+  min-height: 15vh;
+  position: fixed;
+  width: 100%;
+  z-index: 2; }
+  .prometheus-header__title {
+    font-size: 38px; }
+    @media screen and (min-width: 768px) {
+      .prometheus-header__title {
+        font-size: 46px; } }
+  .prometheus-header__content {
+    margin-top: 20px; }
+
+.informationItemsContainer {
+  width: 80%;
+  text-align: center; }
+
+.informationItem {
+  display: inline-block;
+  margin: 10px;
+  min-height: 400px;
+  overflow: auto; }
+  .informationItem:hover {
+    transform: scale(1.1);
+    transition: transform 0.5s; }
+  .informationItem__image {
+    border-radius: 10px;
+    max-width: 250px;
+    max-height: 350px;
+    min-width: 250px; }
+
+.navigationContainer {
+  display: flex;
+  font-size: 18px;
+  overflow: auto; }
+
+.navigationItem {
+  text-transform: uppercase; }
+  .navigationItemSeparator {
+    padding-left: 10px;
+    padding-right: 10px; }
+  .navigationItem a {
+    cursor: pointer;
+    text-decoration: underline; }
+
+.searchContainer {
+  overflow: auto; }
+
+.searchContainer input {
+  background: #282c34;
+  border: 1px solid #000;
+  color: #FFF;
+  height: 30px; }
+
+.searchContainer .button {
+  margin-left: 5px;
+  width: 100px; }
+
+.searchContainer {
+  margin-top: 10px;
+  overflow: auto; }
+  .searchContainer input {
+    background: #282c34;
+    border: 1px solid #000;
+    color: #FFF;
+    height: 30px; }
+  .searchContainer .button {
+    margin-left: 5px;
+    width: 100px; }

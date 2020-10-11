@@ -1,0 +1,26 @@
+.prometheus-header {
+  align-items: center;
+  background: #355f7d;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Overpass', sans-serif;
+  font-size: calc(10px + 2vmin);
+  justify-content: center;
+  min-height: 15vh;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+
+  &__title {
+    font-size: 38px;
+    @media screen and (min-width: 768px) {
+      font-size: 46px;
+    }
+  }
+
+  &__content {
+    margin-top: 20px;
+  }
+}
+

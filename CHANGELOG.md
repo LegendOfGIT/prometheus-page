@@ -8,5 +8,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 Added   | information-items are now retrieved and displayed
 Added   | page now uses react-redux for processing of state
 Added   | redux dev-tools for better debugging
-
+Added   | Node-Sass as dev-dep, styling, itcss, refactors the structure and some classes.
 ## [Released]
