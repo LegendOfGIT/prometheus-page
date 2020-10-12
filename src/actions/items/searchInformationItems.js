@@ -1,10 +1,10 @@
-import config from '../config.js';
+import config from '../../config.js';
 
 export default (navigationId, searchPattern) => (dispatch) => new Promise((resolve) => {
     const getInformationItemsRepository =
         (config.useMocks ?? true)
-            ? require('../repositories/getInformationItemsMockRepository').default
-            : require('../repositories/getInformationItemsRepository').default;
+            ? require('../../repositories/getInformationItemsMockRepository').default
+            : require('../../repositories/getInformationItemsRepository').default;
 
     getInformationItemsRepository(searchPattern, navigationId)
         .then((items) => {

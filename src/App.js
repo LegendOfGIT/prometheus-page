@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
-import ItemsContainer from './containers/stages/ItemsContainer';
-import SearchContainer from './containers/stages/SearchContainer';
+import ItemsContainer from './containers/stages/overview/ItemsContainer';
+import SearchContainer from './containers/stages/header/SearchContainer';
 import { Provider } from 'react-redux';
 import { applyMiddleware, createStore } from 'redux';
 import reducers from './reducers/reducers';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import NavigationContainer from './containers/stages/NavigationContainer';
+import NavigationContainer from './containers/stages/header/NavigationContainer';
 
 let store;
 

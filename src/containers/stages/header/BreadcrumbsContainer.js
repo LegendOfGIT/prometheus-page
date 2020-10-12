@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
-import Breadcrumbs from '../../components/stages/Breadcrumbs';
-import getTranslation from '../../helpers/getTranslation';
+import Breadcrumbs from '../../../components/stages/header/Breadcrumbs';
+import getTranslation from '../../../helpers/getTranslation';
 import { bindActionCreators } from 'redux';
-import setCurrentNavigation from '../../actions/setCurrentNavigation';
-import setNavigationMode from '../../actions/setNavigationMode';
-import { FIRST_LEVEL_NAVIGATION_ID } from '../../constants';
+import setCurrentNavigation from '../../../actions/navigation/setCurrentNavigation';
+import setNavigationMode from '../../../actions/navigation/setNavigationMode';
+import { FIRST_LEVEL_NAVIGATION_ID } from '../../../constants';
 
 const mapStateToProps = (state) => {
     const { activeNavigation, paths } = state.navigation;

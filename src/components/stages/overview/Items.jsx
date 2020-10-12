@@ -15,7 +15,7 @@ class Items extends React.Component {
             <div className={'informationItemsContainer'}>
                 {
                     this.props.informationItems.map(informationItem => {
-                        const { _id, link, title } = informationItem;
+                        const { _id, isOnWishlist, link, title } = informationItem;
                         const titleImage = informationItem['title-image'] || '';
 
                         if (!titleImage) {
@@ -32,6 +32,7 @@ class Items extends React.Component {
                                         loading={'lazy'}
                                     />
                                 </a>
+                                <a className={`informationItem__wishlist ${isOnWishlist ? 'informationItem__wishlist--active' : ''}`} onClick={ () => { this.props.toggleWishlistItem(_id) }}>FAV</a>
                             </div>
                         )
                     })
@@ -48,7 +49,8 @@ Items.propTypes = {
         link: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired
     })),
-    loadInformationItems: PropTypes.func.isRequired
+    loadInformationItems: PropTypes.func.isRequired,
+    toggleWishlistItem: PropTypes.func.isRequired
 };
 
 export default Items;

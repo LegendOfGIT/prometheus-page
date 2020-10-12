@@ -1,4 +1,4 @@
-import loadInformationItems from './loadInformationItems';
+import loadInformationItems from '../items/loadInformationItems';
 
 export default (navigationId = 'ALL') => (dispatch) => {
     dispatch({

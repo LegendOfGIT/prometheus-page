@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import BreadcrumbsContainer from '../../containers/stages/BreadcrumbsContainer';
-import SelectNavigationIdContainer from '../../containers/stages/SelectNavigationIdContainer';
+import BreadcrumbsContainer from '../../../containers/stages/header/BreadcrumbsContainer';
+import SelectNavigationIdContainer from '../../../containers/stages/header/SelectNavigationIdContainer';
 
 const NavigationContainer = ({ showBreadcrumbs, showSelectNavigationId }) => {
     let navigationContainer =
