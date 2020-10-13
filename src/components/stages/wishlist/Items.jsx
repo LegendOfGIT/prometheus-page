@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class Items extends React.Component {
-    componentDidMount() {
-        this.props.loadInformationItems();
-    }
-
     render() {
-        if (!this.props.renderModule || !this.props.informationItems) {
+        if (!this.props.renderModule) {
             return null;
+        }
+
+        if (0 === (this.props.informationItems || []).length) {
+            this.props.setActiveModule('item-overview');
         }
 
         return (
@@ -54,8 +54,8 @@ Items.propTypes = {
         link: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired
     })),
-    loadInformationItems: PropTypes.func.isRequired,
     renderModule: PropTypes.bool.isRequired,
+    setActiveModule: PropTypes.func.isRequired,
     toggleWishlistItem: PropTypes.func.isRequired
 };
 

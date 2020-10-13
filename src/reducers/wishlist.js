@@ -8,12 +8,12 @@ export default (state = defaultState, action) => {
     let { items } = state;
     switch (action.type) {
         case 'ADD_ITEM_TO_WISHLIST':
-            items.push({ itemId: action.itemId });
+            items.push(action.item);
             return getNewState({
                 items
             });
         case 'REMOVE_ITEM_FROM_WISHLIST':
-            items = items.filter((item) => action.itemId !== item.itemId);
+            items = items.filter((item) => action.item._id !== item._id);
             return getNewState({
                 items
             });

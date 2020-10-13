@@ -5,7 +5,7 @@ import toggleWishlistItem from '../../../actions/wishlist/toggleWishlistItem';
 import { bindActionCreators } from 'redux';
 
 const mapStateToProps = (state) => {
-    const isItemOnWishList = (itemId) => !!state.wishlist.items.find((item) => itemId === item.itemId);
+    const isItemOnWishList = (itemId) => !!state.wishlist.items.find((item) => itemId === item._id);
 
     let informationItems = (state.informationItems || []).filter(item => item['title-image']);
     informationItems.forEach((informationItem) => {
@@ -13,7 +13,8 @@ const mapStateToProps = (state) => {
     });
 
     return {
-        informationItems
+        informationItems,
+        renderModule: 'item-overview' === state.activeModule
     };
 };
 

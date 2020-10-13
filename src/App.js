@@ -8,7 +8,8 @@ import reducers from './reducers/reducers';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import NavigationContainer from './containers/stages/header/NavigationContainer';
-import WishlistIcon from './components/stages/header/WishlistIcon';
+import WishlistContainer from './containers/stages/wishlist/ItemsContainer';
+import WishlistIconContainer from './containers/stages/header/WishlistIconContainer';
 
 import './styling/main.css';
 
@@ -29,11 +30,12 @@ function App() {
                     <section className="prometheus-header__content">
                         <NavigationContainer/>
                         <SearchContainer/>
-                        <WishlistIcon/>
+                        <WishlistIconContainer/>
                     </section>
                 </header>
                 <div className="App-content">
                     <ItemsContainer/>
+                    <WishlistContainer/>
                 </div>
             </div>
         </Provider>
