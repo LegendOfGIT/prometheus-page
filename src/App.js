@@ -10,12 +10,13 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import NavigationContainer from './containers/stages/header/NavigationContainer';
 import WishlistIcon from './components/stages/header/WishlistIcon';
 
+import './styling/main.css';
+
 let store;
 
 if ('development' === process.env.NODE_ENV) {
     store = createStore(reducers, composeWithDevTools(applyMiddleware(thunk)));
-}
-else {
+} else {
     store = createStore(reducers, applyMiddleware(thunk));
 }
 
@@ -23,10 +24,13 @@ function App() {
     return (
         <Provider store={store}>
             <div className="App">
-                <header className="App-header">
-                    <NavigationContainer />
-                    <SearchContainer/>
-                    <WishlistIcon/>
+                <header className="prometheus-header">
+                    <h1 className="prometheus-header__title">PROMETHEUS</h1>
+                    <section className="prometheus-header__content">
+                        <NavigationContainer/>
+                        <SearchContainer/>
+                        <WishlistIcon/>
+                    </section>
                 </header>
                 <div className="App-content">
                     <ItemsContainer/>

@@ -1,0 +1,25 @@
+/** Bare HTML elements **/
+html {
+  background: #f1f1f1;
+}
+
+input {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+p {
+  hyphens: auto;
+  line-height: 1.4em;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+button {
+  cursor: pointer;
+}

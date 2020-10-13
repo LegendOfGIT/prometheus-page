@@ -21,7 +21,7 @@ const Breadcrumbs = (
         {
             breadCrumbElements ? breadCrumbElements.map((breadCrumbElement, index) => (
                 <React.Fragment>
-                    <div className={'navigationItemSeparator'}>>></div>
+                    <div className={'navigationItemSeparator'}>|</div>
                     <div className={'navigationItem'}>
                         {index === breadCrumbElements.length-1 ? breadCrumbElement.navigationLabel : (
                             <a onClick={() => { setCurrentNavigation(breadCrumbElement.navigationId); }}>{breadCrumbElement.navigationLabel}</a>
@@ -34,7 +34,7 @@ const Breadcrumbs = (
         {
             isLastNavigationLevel ? null :
             <React.Fragment>
-                <div className={'navigationItemSeparator'}>>></div>
+                <div className={'navigationItemSeparator'}>|</div>
                 <div className={'navigationItem'}><a onClick={() => {setNavigationMode('selectNavigationId')}}>...</a></div>
             </React.Fragment>
         }

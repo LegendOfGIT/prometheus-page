@@ -1,0 +1,35 @@
+.navigationContainer {
+  display: flex;
+  font-size: 18px;
+  overflow: auto;
+}
+
+.navigationItem {
+  text-transform: uppercase;
+
+  &Separator {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  & a {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+.searchContainer {
+  overflow: auto;
+}
+
+.searchContainer input {
+  background: #282c34;
+  border: 1px solid #000;
+  color: #FFF;
+  height: 30px;
+}
+
+.searchContainer .button {
+  margin-left: 5px;
+  width: 100px;
+}
