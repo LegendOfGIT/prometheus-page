@@ -32,7 +32,12 @@ class Items extends React.Component {
                                         loading={'lazy'}
                                     />
                                 </a>
-                                <a className={`informationItem__wishlist ${isOnWishlist ? 'informationItem__wishlist--active' : ''}`} onClick={ () => { this.props.toggleWishlistItem(_id) }}>FAV</a>
+                                <a
+                                    className={`informationItem__wishlist ${isOnWishlist ? 'informationItem__wishlist--active' : ''}`}
+                                    onClick={ () => { this.props.toggleWishlistItem(_id) }}
+                                >
+                                    <img src={ isOnWishlist ? 'images/wishlist-selected.svg' : 'images/wishlist-neutral.svg'}/>
+                                </a>
                             </div>
                         )
                     })

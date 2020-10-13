@@ -8,6 +8,7 @@ import reducers from './reducers/reducers';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import NavigationContainer from './containers/stages/header/NavigationContainer';
+import WishlistIcon from './components/stages/header/WishlistIcon';
 
 let store;
 
@@ -25,6 +26,7 @@ function App() {
                 <header className="App-header">
                     <NavigationContainer />
                     <SearchContainer/>
+                    <WishlistIcon/>
                 </header>
                 <div className="App-content">
                     <ItemsContainer/>

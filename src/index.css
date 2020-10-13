@@ -34,6 +34,7 @@ code {
 
 .informationItem__wishlist {
   color: #FFF;
+  cursor: pointer;
 }
 .informationItem__wishlist--active {
   color: #61dafb;
@@ -77,4 +78,9 @@ code {
 .searchContainer .button {
   margin-left: 5px;
   width: 100px;
+}
+
+.wishlistIcon {
+  position: relative;
+  align: right;
 }
