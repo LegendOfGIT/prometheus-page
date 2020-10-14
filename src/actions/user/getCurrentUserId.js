@@ -1,5 +1,7 @@
 import generateNewUserIdMockRepository from '../../repositories/user/generateNewUserIdMockRepository';
+import generateNewUserIdRepository from '../../repositories/user/generateNewUserIdRepository';
 import storageStub from '../../storage/storageStub';
+import config from '../../config';
 
 const storage = localStorage || storageStub;
 
@@ -8,7 +10,8 @@ export default () => (dispatch, getState) => new Promise((resolve) => {
 
     let { currentUserId, guestUserId = '' } = user;
     const guestUserIdPromise = guestUserId ? Promise.resolve(guestUserId) : new Promise((resolve) => {
-        generateNewUserIdMockRepository().then((userId) => {
+        const repository = (config.useMocks ?? true) ? generateNewUserIdMockRepository() : generateNewUserIdRepository();
+        repository.then((userId) => {
             dispatch({
                 type: 'SET_GUEST_USER_ID',
                 userId
