@@ -23,9 +23,9 @@ const Breadcrumbs = (
                 <React.Fragment>
                     <div className={'navigationItemSeparator'}>|</div>
                     <div className={'navigationItem'}>
-                        {index === breadCrumbElements.length-1 ? breadCrumbElement.navigationLabel : (
+                        {breadCrumbElement.showAsLink ? (
                             <a onClick={() => { setCurrentNavigation(breadCrumbElement.navigationId); }}>{breadCrumbElement.navigationLabel}</a>
-                        )}
+                        ): breadCrumbElement.navigationLabel}
                     </div>
                 </React.Fragment>
             )) : null

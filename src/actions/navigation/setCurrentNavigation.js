@@ -1,5 +1,6 @@
 import loadInformationItems from '../items/loadInformationItems';
 import setActiveModule from './setActiveModule';
+import { MODULE_ID_ITEM_OVERVIEW } from '../../constants';
 
 export default (navigationId = 'ALL') => (dispatch) => {
     dispatch({
@@ -7,6 +8,6 @@ export default (navigationId = 'ALL') => (dispatch) => {
         navigationId
     });
 
-    setActiveModule('item-overview')(dispatch);
+    setActiveModule(MODULE_ID_ITEM_OVERVIEW)(dispatch);
     loadInformationItems(navigationId)(dispatch);
 };

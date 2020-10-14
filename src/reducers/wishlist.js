@@ -13,9 +13,13 @@ export default (state = defaultState, action) => {
                 items
             });
         case 'REMOVE_ITEM_FROM_WISHLIST':
-            items = items.filter((item) => action.item._id !== item._id);
+            items = items.filter((item) => action.item.itemId !== item.itemId);
             return getNewState({
                 items
+            });
+        case 'SET_WISHLIST_ITEMS':
+            return getNewState({
+                items: action.items
             });
         default:
             return state

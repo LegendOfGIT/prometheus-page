@@ -7,15 +7,11 @@ class Items extends React.Component {
             return null;
         }
 
-        if (0 === (this.props.informationItems || []).length) {
-            this.props.setActiveModule('item-overview');
-        }
-
         return (
             <div className={'informationItemsContainer'}>
                 {
                     this.props.informationItems.map(informationItem => {
-                        const { _id, isOnWishlist, link, title } = informationItem;
+                        const { _id, isOnWishlist, itemId, link, title } = informationItem;
                         const titleImage = informationItem['title-image'] || '';
 
                         if (!titleImage) {
@@ -34,7 +30,7 @@ class Items extends React.Component {
                                 </a>
                                 <a
                                     className={`informationItem__wishlist ${isOnWishlist ? 'informationItem__wishlist--active' : ''}`}
-                                    onClick={ () => { this.props.toggleWishlistItem(_id) }}
+                                    onClick={ () => { this.props.toggleWishlistItem(itemId) }}
                                 >
                                     <img src={ isOnWishlist ? 'images/wishlist-selected.svg' : 'images/wishlist-neutral.svg'}/>
                                 </a>
@@ -50,12 +46,12 @@ class Items extends React.Component {
 Items.propTypes = {
     informationItems: PropTypes.arrayOf(PropTypes.shape({
         _id: PropTypes.string.isRequired,
+        itemId: PropTypes.string.isRequired,
         'title-image': PropTypes.string.isRequired,
         link: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired
     })),
     renderModule: PropTypes.bool.isRequired,
-    setActiveModule: PropTypes.func.isRequired,
     toggleWishlistItem: PropTypes.func.isRequired
 };
 
