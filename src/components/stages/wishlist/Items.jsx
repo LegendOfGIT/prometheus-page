@@ -11,7 +11,7 @@ class Items extends React.Component {
             <div className={'informationItemsContainer'}>
                 {
                     this.props.informationItems.map(informationItem => {
-                        const { _id, isOnWishlist, itemId, link, title } = informationItem;
+                        const { _id, itemId, link, title } = informationItem;
                         const titleImage = informationItem['title-image'] || '';
 
                         if (!titleImage) {
@@ -29,10 +29,10 @@ class Items extends React.Component {
                                     />
                                 </a>
                                 <a
-                                    className={`informationItem__wishlist ${isOnWishlist ? 'informationItem__wishlist--active' : ''}`}
+                                    className="informationItem__wishlist informationItem__wishlist--active"
                                     onClick={ () => { this.props.toggleWishlistItem(itemId) }}
                                 >
-                                    <img src={ isOnWishlist ? 'images/wishlist-selected.svg' : 'images/wishlist-neutral.svg'}/>
+                                    <img src="images/wishlist-selected.svg" />
                                 </a>
                             </div>
                         )

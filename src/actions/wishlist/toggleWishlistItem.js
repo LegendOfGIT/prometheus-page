@@ -1,6 +1,7 @@
 import addWishlistItemMockRepository from '../../repositories/wishlist/addWishlistItemMockRepository';
 import addWishlistItemRepository from '../../repositories/wishlist/addWishlistItemRepository';
 import getCurrentUserId from '../user/getCurrentUserId';
+import removeWishlistItemRepository from '../../repositories/wishlist/removeWishlistItemRepository';
 import removeWishlistItemMockRepository from '../../repositories/wishlist/removeWishlistItemMockRepository';
 import { MODULE_ID_ITEM_OVERVIEW } from '../../constants';
 import config from '../../config';
@@ -14,10 +15,13 @@ export default (itemId) => (dispatch, getState) => new Promise((resolve) => {
         const items = isItemOnWishList ? state.wishlist.items : state.informationItems;
         const item = items.find((item) => itemId === item.itemId);
 
+        const { useMocks = true } = config;
+
         const repository =
             !isItemOnWishList
-                ? (config.useMocks ?? true) ? addWishlistItemMockRepository(itemId) : addWishlistItemRepository(userId, itemId)
-                : removeWishlistItemMockRepository(itemId);
+                ? useMocks ? addWishlistItemMockRepository(itemId) : addWishlistItemRepository(userId, itemId)
+                : useMocks ? removeWishlistItemMockRepository(itemId) : removeWishlistItemRepository(userId, itemId);
+
         repository.then(() => {
             dispatch({
                 type: isItemOnWishList ? 'REMOVE_ITEM_FROM_WISHLIST' : 'ADD_ITEM_TO_WISHLIST',
