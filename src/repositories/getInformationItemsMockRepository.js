@@ -1,8 +1,8 @@
-import dataMock from '../__data__/data-mock';
+import overItemsMock from '../__data__/overview-items-mock';
 import { FIRST_LEVEL_NAVIGATION_ID } from '../constants';
 
 export default (searchPattern, navigationId) => new Promise((resolve) => {
-    let { items } = dataMock;
+    let { items } = overItemsMock;
     navigationId = FIRST_LEVEL_NAVIGATION_ID === navigationId ? undefined : navigationId;
 
     items = navigationId ? items.filter((item) => (item.navigationPath || []).includes(navigationId)) : items;

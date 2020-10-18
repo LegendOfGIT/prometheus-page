@@ -12,63 +12,8 @@ code {
     monospace;
 }
 
-.informationItem {
-  align-items: center;
-  display: grid;
-  float: left;
-  min-height: 400px;
-  overflow: auto;
-  padding-left: 5px;
-}
-.informationItem:hover {
-  transform: scale(1.1);
-  transition: transform 0.5s;
-}
 
-.informationItem__image {
-  border-radius: 10px;
-  max-width: 250px;
-  max-height: 350px;
-  min-width: 250px;
-}
-
-
-.informationItemsContainer {
-  width: 80%;
-}
-
-.navigationItemSeparator {
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-.navigationContainer {
-  display: flex;
-  font-size: 0.8em;
-  overflow: auto;
-}
-
-.navigationItem {
-  font-size: large;
-  text-transform: uppercase;
-}
-.navigationItem a {
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-.searchContainer {
-  overflow: auto;
-}
-
-.searchContainer input {
-  background: #282c34;
-  border: 1px solid #000;
-  color: #FFF;
-  height: 30px;
-}
-
-.searchContainer .button {
-  margin-left: 5px;
-  width: 100px;
+.wishlistIcon {
+  position: relative;
+  align: right;
 }
