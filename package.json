@@ -13,17 +13,20 @@
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
-    "node-sass": "^4.14.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "redux-devtools-extension": "^2.13.8"
   },
+  "jest": {
+    "moduleNameMapper": {
+      "@/([^\\.]*)$": "<rootDir>/src/$1"
+    }
+  },
   "scripts": {
     "start": "set PORT=3003 && react-scripts start",
     "build": "react-scripts build",
-    "compile-css": "node-sass src/styling/main.scss src/styling/main.css",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
