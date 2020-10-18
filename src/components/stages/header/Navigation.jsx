@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import BreadcrumbsContainer from '../../containers/stages/BreadcrumbsContainer';
-import SelectNavigationIdContainer from '../../containers/stages/SelectNavigationIdContainer';
+import BreadcrumbsContainer from '../../../containers/stages/header/BreadcrumbsContainer';
+import SelectNavigationIdContainer from '../../../containers/stages/header/SelectNavigationIdContainer';
 
-const NavigationContainer = ({ showBreadcrumbs, showSelectNavigationId }) => {
+const Navigation = ({ showBreadcrumbs, showSelectNavigationId }) => {
     let navigationContainer =
         showBreadcrumbs ? <BreadcrumbsContainer/> :
         showSelectNavigationId ? <SelectNavigationIdContainer/> :
@@ -16,9 +16,9 @@ const NavigationContainer = ({ showBreadcrumbs, showSelectNavigationId }) => {
     return <div className={'navigationContainer'}>{navigationContainer}</div>;
 }
 
-NavigationContainer.propTypes = {
+Navigation.propTypes = {
     showBreadcrumbs: PropTypes.bool.isRequired,
     showSelectNavigationId: PropTypes.bool.isRequired
 };
 
-export default NavigationContainer;
+export default Navigation;

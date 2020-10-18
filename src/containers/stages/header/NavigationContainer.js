@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Navigation from '../../components/stages/Navigation';
+import Navigation from '../../../components/stages/header/Navigation';
 
 const mapStateToProps = (state) => {
     const { navigationMode } = state.navigation;

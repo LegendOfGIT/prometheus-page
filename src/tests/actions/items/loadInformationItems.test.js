@@ -7,9 +7,9 @@ jest.mock('@/repositories/getInformationItemsMockRepository');
 import getInformationItemsRepository from '@/repositories/getInformationItemsRepository';
 import getInformationItemsMockRepository from '@/repositories/getInformationItemsMockRepository';
 
-const searchInformationItems = require('@/actions/searchInformationItems').default;
+const loadInformationItems = require('@/actions/items/loadInformationItems').default;
 
-describe('searchInformationItems action', () => {
+describe('loadInformationItems action', () => {
     beforeEach(() => {
         jest.clearAllMocks();
     });
@@ -25,13 +25,13 @@ describe('searchInformationItems action', () => {
          });
 
          test('action calls repository mock with expected arguments', () => {
-             searchInformationItems('NAVIGATION', 'abc')();
-             expect(getInformationItemsMockRepository).toHaveBeenCalledWith('abc', 'NAVIGATION');
+             loadInformationItems('NAVIGATION')();
+             expect(getInformationItemsMockRepository).toHaveBeenCalledWith(undefined, 'NAVIGATION');
          });
 
          test('dispatches resolved items of repository with expected action', (done) => {
              const dispatchSpy = jest.fn();
-             searchInformationItems('NAVIGATION')(dispatchSpy).then(() => {
+             loadInformationItems('NAVIGATION')(dispatchSpy).then(() => {
                  expect(dispatchSpy).toHaveBeenCalledWith({
                      type: 'ADD_INFORMATION_ITEMS',
                      items: {
@@ -53,7 +53,7 @@ describe('searchInformationItems action', () => {
         });
 
         test('action calls repository with expected arguments', () => {
-            searchInformationItems('NAVIGATION')();
+            loadInformationItems('NAVIGATION')();
             expect(getInformationItemsRepository).toHaveBeenCalledWith(undefined, 'NAVIGATION');
         });
     });

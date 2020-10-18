@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const NavigationContainer = (
+const Breadcrumbs = (
     {
         breadCrumbElements,
         isFirstNavigationLevel,
@@ -23,9 +23,9 @@ const NavigationContainer = (
                 <React.Fragment>
                     <div className={'navigationItemSeparator'}>|</div>
                     <div className={'navigationItem'}>
-                        {index === breadCrumbElements.length-1 ? breadCrumbElement.navigationLabel : (
+                        {breadCrumbElement.showAsLink ? (
                             <a onClick={() => { setCurrentNavigation(breadCrumbElement.navigationId); }}>{breadCrumbElement.navigationLabel}</a>
-                        )}
+                        ): breadCrumbElement.navigationLabel}
                     </div>
                 </React.Fragment>
             )) : null
@@ -41,7 +41,7 @@ const NavigationContainer = (
     </div>;
 }
 
-NavigationContainer.propTypes = {
+Breadcrumbs.propTypes = {
     breadCrumbElements: PropTypes.arrayOf(PropTypes.shape({
         navigationId: PropTypes.string.isRequired,
         navigationLabel: PropTypes.string.isRequired
@@ -53,4 +53,4 @@ NavigationContainer.propTypes = {
     setNavigationMode: PropTypes.func.isRequired
 };
 
-export default NavigationContainer;
+export default Breadcrumbs;

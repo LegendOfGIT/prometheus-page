@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import Items from '../../components/stages/Search';
-import searchInformationItems from '../../actions/searchInformationItems';
+import Items from '../../../components/stages/header/Search';
+import searchInformationItems from '../../../actions/items/searchInformationItems';
 import { bindActionCreators } from 'redux';
 
 const mapStateToProps = (state) => {
