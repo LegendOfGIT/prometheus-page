@@ -1,16 +1,25 @@
 .searchContainer {
-  margin-top: 10px;
+  margin-top: 20px;
   overflow: auto;
 
   input {
     background: #282c34;
-    border: 1px solid #000;
+    border: 2px solid #000;
     color: #FFF;
-    height: 30px;
+    height: inherit;
+    min-height: 30px;
+    padding: 10px;
+    outline: none;
   }
 
-  .button {
+  &__inputField {
+    max-width: 520px;
+    width: 50%;
+  }
+
+  &__button {
     margin-left: 5px;
+    text-transform: uppercase;
     width: 100px;
   }
 
