@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import SelectNavigationId from '../../components/stages/SelectNavigationId';
-import getTranslation from '../../helpers/getTranslation';
+import SelectNavigationId from '../../../components/stages/header/SelectNavigationId';
+import getTranslation from '../../../helpers/getTranslation';
 import { bindActionCreators } from 'redux';
-import setCurrentNavigation from '../../actions/setCurrentNavigation';
-import setNavigationMode from '../../actions/setNavigationMode';
+import setCurrentNavigation from '../../../actions/navigation/setCurrentNavigation';
+import setNavigationMode from '../../../actions/navigation/setNavigationMode';
 
 const mapStateToProps = (state) => {
     const { activeNavigation, paths } = state.navigation;

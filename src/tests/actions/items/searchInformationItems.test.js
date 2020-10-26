@@ -1,15 +1,15 @@
 let configMock = { useMocks: true };
-jest.doMock('../../config.js', () => configMock);
+jest.doMock('@/config', () => configMock);
 
-jest.mock('../../repositories/getInformationItemsRepository');
-jest.mock('../../repositories/getInformationItemsMockRepository');
+jest.mock('@/repositories/getInformationItemsRepository');
+jest.mock('@/repositories/getInformationItemsMockRepository');
 
-import getInformationItemsRepository from '../../repositories/getInformationItemsRepository';
-import getInformationItemsMockRepository from '../../repositories/getInformationItemsMockRepository';
+import getInformationItemsRepository from '@/repositories/getInformationItemsRepository';
+import getInformationItemsMockRepository from '@/repositories/getInformationItemsMockRepository';
 
-const loadInformationItems = require('../../actions/loadInformationItems').default;
+const searchInformationItems = require('@/actions/items/searchInformationItems').default;
 
-describe('loadInformationItems action', () => {
+describe('searchInformationItems action', () => {
     beforeEach(() => {
         jest.clearAllMocks();
     });
@@ -25,13 +25,13 @@ describe('loadInformationItems action', () => {
          });
 
          test('action calls repository mock with expected arguments', () => {
-             loadInformationItems('NAVIGATION')();
-             expect(getInformationItemsMockRepository).toHaveBeenCalledWith(undefined, 'NAVIGATION');
+             searchInformationItems('NAVIGATION', 'abc')();
+             expect(getInformationItemsMockRepository).toHaveBeenCalledWith('abc', 'NAVIGATION');
          });
 
          test('dispatches resolved items of repository with expected action', (done) => {
              const dispatchSpy = jest.fn();
-             loadInformationItems('NAVIGATION')(dispatchSpy).then(() => {
+             searchInformationItems('NAVIGATION')(dispatchSpy).then(() => {
                  expect(dispatchSpy).toHaveBeenCalledWith({
                      type: 'ADD_INFORMATION_ITEMS',
                      items: {
@@ -53,7 +53,7 @@ describe('loadInformationItems action', () => {
         });
 
         test('action calls repository with expected arguments', () => {
-            loadInformationItems('NAVIGATION')();
+            searchInformationItems('NAVIGATION')();
             expect(getInformationItemsRepository).toHaveBeenCalledWith(undefined, 'NAVIGATION');
         });
     });
