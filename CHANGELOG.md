@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed | overview and wishlist is now coupled with virtual information items
 
 ### unknown
+- Added   | Wishlist icon looks and placing
 - Fixed   | navigation issues
 - Added   | added information "currentUserId"
 - Added   | added information "guestUserId"
