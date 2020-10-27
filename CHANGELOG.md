@@ -5,10 +5,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### 2020-10-27
+- Added   | navigationId is now set from the address-bar path if the page is refreshed
+- Added   | address-bar is updated to current path if current navigation has changed
+
 ### 2020-10-26
 - Changed | overview and wishlist is now coupled with virtual information items
 
 ### unknown
+- Added   | Wishlist icon looks and placing
 - Fixed   | navigation issues
 - Added   | added information "currentUserId"
 - Added   | added information "guestUserId"

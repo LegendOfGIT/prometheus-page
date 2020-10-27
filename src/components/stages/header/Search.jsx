@@ -7,8 +7,10 @@ const Search = ({ activeNavigation, searchButtonLabel, searchInformationItems, s
     };
 
     return <div className={'searchContainer'}>
-        <input id={'searchPattern'} type={'text'} placeholder={searchTextPlaceholder} onKeyUp={() => search()} />
-        <input type={'button'} className={'button'} value={searchButtonLabel} onClick={() => search()} />
+        <input id={'searchPattern'} type={'text'} className={'searchContainer__inputField'}
+               placeholder={searchTextPlaceholder} onKeyUp={() => search()} />
+        <input type={'button'} className={'button'} className={'searchContainer__button'}
+               value={searchButtonLabel} onClick={() => search()} />
     </div>;
 }
 

@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WishlistIcon component renders active wishlist-icon if there is an item on the wishlist 1`] = `
+<div
+  className="wishlist"
+>
+  <img
+    className="wishlist__icon"
+    onClick={[Function]}
+    src="/images/wishlist-selected.svg"
+  />
+  <h5
+    className="wishlist__title"
+  >
+    Wishlist
+  </h5>
+</div>
+`;
+
+exports[`WishlistIcon component renders without exploding 1`] = `
+<div
+  className="wishlist"
+>
+  <img
+    className="wishlist__icon"
+    onClick={[Function]}
+    src="/images/wishlist-neutral.svg"
+  />
+  <h5
+    className="wishlist__title"
+  >
+    Wishlist
+  </h5>
+</div>
+`;

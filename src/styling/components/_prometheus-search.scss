@@ -1,17 +1,38 @@
 .searchContainer {
-  margin-top: 10px;
-  overflow: auto;
+  margin-top: 20px;
 
   input {
     background: #282c34;
-    border: 1px solid #000;
+    border: 2px solid #000;
     color: #FFF;
-    height: 30px;
+    height: inherit;
+    min-height: 30px;
+    padding: 10px;
+    transition: all .2s ease;
+    outline: none;
+
+    &:focus {
+      border-color: #fff;
+      transition: all .2s ease;
+    }
   }
 
-  .button {
+  &__inputField {
+    max-width: 520px;
+    width: 50%;
+  }
+
+  &__button {
     margin-left: 5px;
+    text-transform: uppercase;
     width: 100px;
+    &:active {
+      background: #fff;
+      border-color: #fff;
+      color: #282c34;
+      font-weight: bold;
+
+    }
   }
 
 }
