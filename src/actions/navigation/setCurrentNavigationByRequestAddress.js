@@ -14,9 +14,14 @@ export default () => (dispatch) => {
         return;
     }
 
-    let firstMatchingNavigationPath = navigation.filter((navigationItem) => {
+    const firstMatchingNavigationPath = navigation.filter((navigationItem) => {
         return -1 !== navigationItem.path.indexOf(pathname);
     })[0];
+
+    if (!firstMatchingNavigationPath) {
+        setCurrentNavigation()(dispatch);
+        return;
+    }
 
     if (firstMatchingNavigationPath) {
         setCurrentNavigation(firstMatchingNavigationPath.to)(dispatch);
