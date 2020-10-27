@@ -2,10 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class Items extends React.Component {
-    componentDidMount() {
-        this.props.loadInformationItems();
-    }
-
     render() {
         if (!this.props.renderModule || !this.props.informationItems) {
             return null;
