@@ -1,6 +1,5 @@
 .searchContainer {
   margin-top: 20px;
-  overflow: auto;
 
   input {
     background: #282c34;
@@ -9,7 +8,13 @@
     height: inherit;
     min-height: 30px;
     padding: 10px;
+    transition: all .2s ease;
     outline: none;
+
+    &:focus {
+      border-color: #fff;
+      transition: all .2s ease;
+    }
   }
 
   &__inputField {
@@ -21,6 +26,13 @@
     margin-left: 5px;
     text-transform: uppercase;
     width: 100px;
+    &:active {
+      background: #fff;
+      border-color: #fff;
+      color: #282c34;
+      font-weight: bold;
+
+    }
   }
 
 }
