@@ -10,7 +10,10 @@ const mapStateToProps = (state) => {
 
     let informationItems = (state.informationItems || []).filter(item => item['title-image']);
     informationItems.forEach((informationItem) => {
+        const { correspondingInformationItems = [] } = informationItem;
+        const firstCorrespondingItem = correspondingInformationItems[0] || {};
         informationItem.isOnWishlist = isItemOnWishList(informationItem.itemId);
+        informationItem.link = firstCorrespondingItem.link;
     });
 
     return {
