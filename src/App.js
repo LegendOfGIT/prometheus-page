@@ -9,6 +9,7 @@ import storageStub from './storage/storageStub';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import NavigationContainer from './containers/stages/header/NavigationContainer';
+import refreshPage from './actions/refreshPage';
 import welcomeUser from './actions/welcomeUser';
 import WishlistContainer from './containers/stages/wishlist/ItemsContainer';
 import WishlistIconContainer from './containers/stages/header/WishlistIconContainer';
@@ -29,6 +30,8 @@ function App() {
     if (!storage.getItem('prometheusFirstVisit')) {
         welcomeUser()(store.dispatch, store.getState);
     }
+
+    refreshPage()(store.dispatch);
 
     return (
         <Provider store={store}>

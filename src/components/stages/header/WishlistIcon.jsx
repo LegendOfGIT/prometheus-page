@@ -6,7 +6,7 @@ const WishlistIcon = ({setActiveModule, wishlistHasItems}) => {
     return (
         <div className={'wishlist'}>
             <img className={'wishlist__icon'}
-                 src={`images/wishlist-${wishlistHasItems ? 'selected' : 'neutral'}.svg`}
+                 src={`/images/wishlist-${wishlistHasItems ? 'selected' : 'neutral'}.svg`}
                  onClick={() => {
                      setActiveModule(MODULE_ID_WISHLIST);
                  }}
@@ -14,6 +14,10 @@ const WishlistIcon = ({setActiveModule, wishlistHasItems}) => {
             <h5 className={'wishlist__title'}>Wishlist</h5>
         </div>)
         ;
+};
+
+WishlistIcon.defaultProps = {
+    wishlistHasItems: false
 };
 
 WishlistIcon.propTypes = {
