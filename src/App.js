@@ -36,6 +36,9 @@ function App() {
                 <header className="prometheus-header">
                     <h1 className="prometheus-header__title">PROMETHEUS</h1>
                     <section className="prometheus-header__content">
+                        <section className="prometheus-header__logo">
+                            <img src={'/pLogo.png'}/>
+                        </section>
                         <NavigationContainer/>
                         <SearchContainer/>
                         <WishlistIconContainer/>
