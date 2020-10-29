@@ -8,13 +8,25 @@ import { MODULE_ID_ITEM_OVERVIEW } from '../../../constants';
 const mapStateToProps = (state) => {
     const isItemOnWishList = (itemId) => !!state.wishlist.items.find((item) => itemId === item.itemId);
 
+    const providerIconMapping = [
+        { provider: 'amazon', iconImage: 'amazon-icon.png' },
+        { provider: 'otto', iconImage: 'otto-icon.png' }
+    ];
+
     let informationItems = (state.informationItems || []).filter(item => item['title-image']);
     informationItems.forEach((informationItem) => {
-        const { correspondingInformationItems = [] } = informationItem;
+        const { correspondingInformationItems = [], itemId } = informationItem;
         const firstCorrespondingItem = correspondingInformationItems[0] || {};
-        informationItem.isOnWishlist = isItemOnWishList(informationItem.itemId);
-        informationItem.link = firstCorrespondingItem.link;
+        informationItem.isOnWishlist = isItemOnWishList(itemId);
+
+        informationItem.imageLink = firstCorrespondingItem.link;
+        informationItem.links = correspondingInformationItems.map((item) => ({
+            link: item.link,
+            linkImage: (providerIconMapping.find((mappingItem) => -1 !== item.itemId.indexOf(mappingItem.provider)) || {}).iconImage
+        }));
     });
+
+    console.log(informationItems);
 
     return {
         informationItems,

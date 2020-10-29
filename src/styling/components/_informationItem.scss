@@ -5,6 +5,7 @@
   padding: 17px;
   position: relative;
   overflow: hidden;
+  vertical-align: top;
 
   &__image {
     border-radius: 10px;
@@ -31,10 +32,23 @@
 
   &__linkBar {
     margin-top: 20px;
+
+    &img {
+      display: unset;
+    }
+  }
+
+  &__providerLinkImage {
+    padding-right: 8px;
+    vertical-align: middle;
+    width: 40px;
   }
 
   &__wishlist {
     img {
+      cursor: pointer;
+      padding-left: 10px;
+      vertical-align: top;
       width: unset;
     }
   }

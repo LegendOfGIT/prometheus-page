@@ -11,7 +11,7 @@ class Items extends React.Component {
             <div className={'informationItemsContainer'}>
                 {
                     this.props.informationItems.map(informationItem => {
-                        const { _id, isOnWishlist, itemId, link, title } = informationItem;
+                        const { _id, isOnWishlist, itemId, imageLink, links, title } = informationItem;
                         const titleImage = informationItem['title-image'] || '';
 
                         if (!titleImage) {
@@ -21,22 +21,35 @@ class Items extends React.Component {
                         return (
                             <div className={'informationItem'} key={`informationItem_${_id}`}>
                                 <div className={'informationItem__imageContainer'}>
-                                    <a href={link} target={_id}>
+                                    <a href={imageLink} target={_id}>
                                         <img
                                             className={'informationItem__image'}
                                             alt={title}
                                             src={titleImage}
                                             loading={'lazy'}
                                         />
+
+                                        <a
+                                            className={`informationItem__wishlist ${isOnWishlist ? 'informationItem__wishlist--active' : ''}`}
+                                            onClick={ () => { this.props.toggleWishlistItem(itemId) }}
+                                        >
+                                            <img src={ isOnWishlist ? 'images/wishlist-selected.svg' : 'images/wishlist-neutral.svg'}/>
+                                        </a>
                                     </a>
                                 </div>
                                 <div className={'informationItem__linkBar'}>
-                                    <a
-                                        className={`informationItem__wishlist ${isOnWishlist ? 'informationItem__wishlist--active' : ''}`}
-                                        onClick={ () => { this.props.toggleWishlistItem(itemId) }}
-                                    >
-                                        <img src={ isOnWishlist ? 'images/wishlist-selected.svg' : 'images/wishlist-neutral.svg'}/>
-                                    </a>
+                                    {
+                                        links.map((link) => {
+                                            if (!link.linkImage) {
+                                                return null;
+                                            }
+
+                                            return <a href={link.link} target={_id}>
+                                                <img className={'informationItem__providerLinkImage'} src={`images/${link.linkImage}`}/>
+                                            </a>
+                                        })
+                                    }
+
                                 </div>
                             </div>
                         )
@@ -51,11 +64,14 @@ Items.propTypes = {
     informationItems: PropTypes.arrayOf(PropTypes.shape({
         _id: PropTypes.string.isRequired,
         itemId: PropTypes.string.isRequired,
+        imageLink: PropTypes.string.isRequired,
+        links: PropTypes.arrayOf(PropTypes.shape({
+            link: PropTypes.string.isRequired,
+            linkImage: PropTypes.string
+        })),
         'title-image': PropTypes.string.isRequired,
-        link: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired
     })),
-    loadInformationItems: PropTypes.func.isRequired,
     renderModule: PropTypes.bool.isRequired,
     toggleWishlistItem: PropTypes.func.isRequired
 };
