@@ -33,6 +33,7 @@ class Items extends React.Component {
                                 <a
                                     className={`informationItem__wishlist ${isOnWishlist ? 'informationItem__wishlist--active' : ''}`}
                                     onClick={ (e) => { this.props.toggleWishlistItem(itemId); e.preventDefault(); }}
+                                    onMouseEnter={(e) => { e.cancelBubble = false; }}
                                 >
                                     <img src={ isOnWishlist ? 'images/wishlist-selected.svg' : 'images/wishlist-neutral.svg'}/>
                                 </a>

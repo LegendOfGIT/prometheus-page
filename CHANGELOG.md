@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### 2020-10-29
 - Added   | provider links in overview
 - Changed | wishlist-icon is now bound to item image
+- Changed | debounced search field input
 
 ### 2020-10-27
 - Added   | navigationId is now set from the address-bar path if the page is refreshed
