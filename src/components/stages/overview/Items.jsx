@@ -28,15 +28,14 @@ class Items extends React.Component {
                                             src={titleImage}
                                             loading={'lazy'}
                                         />
-
-                                        <a
-                                            className={`informationItem__wishlist ${isOnWishlist ? 'informationItem__wishlist--active' : ''}`}
-                                            onClick={ (e) => { this.props.toggleWishlistItem(itemId); e.preventDefault(); }}
-                                        >
-                                            <img src={ isOnWishlist ? 'images/wishlist-selected.svg' : 'images/wishlist-neutral.svg'}/>
-                                        </a>
                                     </a>
                                 </div>
+                                <a
+                                    className={`informationItem__wishlist ${isOnWishlist ? 'informationItem__wishlist--active' : ''}`}
+                                    onClick={ (e) => { this.props.toggleWishlistItem(itemId); e.preventDefault(); }}
+                                >
+                                    <img src={ isOnWishlist ? 'images/wishlist-selected.svg' : 'images/wishlist-neutral.svg'}/>
+                                </a>
                                 <div className={'informationItem__linkBar'}>
                                     {
                                         links.map((link) => {
