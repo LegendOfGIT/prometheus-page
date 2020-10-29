@@ -20,20 +20,24 @@ class Items extends React.Component {
 
                         return (
                             <div className={'informationItem'} key={`informationItem_${_id}`}>
-                                <a href={link} target={_id}>
-                                    <img
-                                        className={'informationItem__image'}
-                                        alt={title}
-                                        src={titleImage}
-                                        loading={'lazy'}
-                                    />
-                                </a>
-                                <a
-                                    className={`informationItem__wishlist ${isOnWishlist ? 'informationItem__wishlist--active' : ''}`}
-                                    onClick={ () => { this.props.toggleWishlistItem(itemId) }}
-                                >
-                                    <img src={ isOnWishlist ? 'images/wishlist-selected.svg' : 'images/wishlist-neutral.svg'}/>
-                                </a>
+                                <div className={'informationItem__imageContainer'}>
+                                    <a href={link} target={_id}>
+                                        <img
+                                            className={'informationItem__image'}
+                                            alt={title}
+                                            src={titleImage}
+                                            loading={'lazy'}
+                                        />
+                                    </a>
+                                </div>
+                                <div className={'informationItem__linkBar'}>
+                                    <a
+                                        className={`informationItem__wishlist ${isOnWishlist ? 'informationItem__wishlist--active' : ''}`}
+                                        onClick={ () => { this.props.toggleWishlistItem(itemId) }}
+                                    >
+                                        <img src={ isOnWishlist ? 'images/wishlist-selected.svg' : 'images/wishlist-neutral.svg'}/>
+                                    </a>
+                                </div>
                             </div>
                         )
                     })

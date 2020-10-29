@@ -2,18 +2,25 @@
   display: inline-block;
   margin: 10px;
   min-height: 400px;
-  overflow: auto;
-
-  &:hover {
-    transform: scale(1.1);
-    transition: transform 0.5s;
-  }
+  padding: 17px;
+  overflow: hidden;
 
   &__image {
     border-radius: 10px;
     max-width: 250px;
     max-height: 350px;
     min-width: 250px;
+  }
+
+  &__imageContainer {
+    &:hover {
+      transform: scale(1.1);
+      transition: transform 0.5s;
+    }
+  }
+
+  &__linkBar {
+    margin-top: 20px;
   }
 
   &__wishlist {
