@@ -31,7 +31,7 @@ class Items extends React.Component {
 
                                         <a
                                             className={`informationItem__wishlist ${isOnWishlist ? 'informationItem__wishlist--active' : ''}`}
-                                            onClick={ () => { this.props.toggleWishlistItem(itemId) }}
+                                            onClick={ (e) => { this.props.toggleWishlistItem(itemId); e.preventDefault(); }}
                                         >
                                             <img src={ isOnWishlist ? 'images/wishlist-selected.svg' : 'images/wishlist-neutral.svg'}/>
                                         </a>
@@ -44,7 +44,7 @@ class Items extends React.Component {
                                                 return null;
                                             }
 
-                                            return <a href={link.link} target={_id}>
+                                            return <a href={link.link} target={link.itemId}>
                                                 <img className={'informationItem__providerLinkImage'} src={`images/${link.linkImage}`}/>
                                             </a>
                                         })

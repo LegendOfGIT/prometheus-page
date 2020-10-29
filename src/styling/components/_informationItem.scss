@@ -14,18 +14,6 @@
     min-width: 250px;
   }
 
-  &__wishlist {
-    background: #fff;
-    border-radius: 50%;
-    cursor: pointer;
-    height: 24px;
-    padding: 10px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 24px;
-  }
-
   &__imageContainer {
     &:hover {
       transform: scale(1.1);
@@ -35,6 +23,8 @@
 
   &__linkBar {
     margin-top: 20px;
+    min-height: 30px;
+    vertical-align: middle;
 
     &img {
       display: unset;
@@ -45,5 +35,18 @@
     padding-right: 8px;
     vertical-align: middle;
     width: 40px;
+  }
+
+  &__wishlist {
+    background: #fff;
+    border: 1px solid #4AA7EB;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 24px;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 24px;
   }
 }

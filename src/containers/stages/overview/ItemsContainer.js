@@ -21,6 +21,7 @@ const mapStateToProps = (state) => {
 
         informationItem.imageLink = firstCorrespondingItem.link;
         informationItem.links = correspondingInformationItems.map((item) => ({
+            itemId: item.itemId,
             link: item.link,
             linkImage: (providerIconMapping.find((mappingItem) => -1 !== item.itemId.indexOf(mappingItem.provider)) || {}).iconImage
         }));
