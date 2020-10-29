@@ -15,12 +15,15 @@
   }
 
   &__wishlist {
-      background: #fff;
-      border-radius: 50%;
-      padding: 10px;
-      position: absolute;
-      right: 0;
-      top: 0;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 24px;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 24px;
   }
 
   &__imageContainer {
@@ -42,14 +45,5 @@
     padding-right: 8px;
     vertical-align: middle;
     width: 40px;
-  }
-
-  &__wishlist {
-    img {
-      cursor: pointer;
-      padding-left: 10px;
-      vertical-align: top;
-      width: unset;
-    }
   }
 }
