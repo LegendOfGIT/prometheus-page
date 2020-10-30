@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const SelectNavigationId = ({ navigationBackLabel, nextNavigationElements, setCurrentNavigation, setNavigationMode }) => {
-    return <React.Fragment>
+    return <>
         <div className={'navigationItem'}>
             <a onClick={() => { setNavigationMode('breadcrumbs'); }}>{navigationBackLabel}</a>
         </div>
@@ -15,7 +15,7 @@ const SelectNavigationId = ({ navigationBackLabel, nextNavigationElements, setCu
                 </div>
             </React.Fragment>
         ))}
-    </React.Fragment>;
+    </>;
 }
 
 SelectNavigationId.propTypes = {

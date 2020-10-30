@@ -11,7 +11,7 @@ const Breadcrumbs = (
         setNavigationMode
     }
 ) => {
-    return <div className={'navigationContainer'}>
+    return <>
         <div className={'navigationItem'}>
         { isFirstNavigationLevel ? navigationAllLabel : (
             <a onClick={() => { setCurrentNavigation(); }}>{navigationAllLabel}</a>
@@ -38,7 +38,7 @@ const Breadcrumbs = (
                 <div className={'navigationItem'}><a onClick={() => {setNavigationMode('selectNavigationId')}}>...</a></div>
             </React.Fragment>
         }
-    </div>;
+    </>;
 }
 
 Breadcrumbs.propTypes = {

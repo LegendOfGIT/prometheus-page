@@ -37,10 +37,12 @@ function App() {
         <Provider store={store}>
             <div className="App">
                 <header className="prometheus-header">
-                    <h1 className="prometheus-header__title">PROMETHEUS</h1>
                     <section className="prometheus-header__content">
-                        <NavigationContainer/>
+                        <section className="prometheus-header__logo">
+                            <img src={'/pLogo.png'}/>
+                        </section>
                         <SearchContainer/>
+                        <NavigationContainer/>
                         <WishlistIconContainer/>
                     </section>
                 </header>

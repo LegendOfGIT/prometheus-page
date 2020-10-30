@@ -1,7 +1,9 @@
 .navigationContainer {
   display: block;
   font-size: 14px;
-  overflow: auto;
+  overflow: hidden;
+  padding-bottom: 20px;
+  padding-top: 20px;
 }
 
 .navigationItem {
@@ -18,20 +20,4 @@
     cursor: pointer;
     text-decoration: underline;
   }
-}
-
-.searchContainer {
-  overflow: auto;
-}
-
-.searchContainer input {
-  background: #282c34;
-  border: 1px solid #000;
-  color: #FFF;
-  height: 30px;
-}
-
-.searchContainer .button {
-  margin-left: 5px;
-  width: 100px;
 }
