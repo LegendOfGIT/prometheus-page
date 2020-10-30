@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changed | item wishlist-icon is now a separate container/component
 - Changed | item link bar now a separate container/component
 - Added   | item link bar to wishlist
+- Added   | added settings icon to header
 
 ### 2020-10-29
 - Added   | provider links in overview

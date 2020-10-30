@@ -10,6 +10,7 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import NavigationContainer from './containers/stages/header/NavigationContainer';
 import refreshPage from './actions/refreshPage';
+import SettingsIconContainer from './containers/stages/header/SettingsIconContainer';
 import welcomeUser from './actions/welcomeUser';
 import WishlistContainer from './containers/stages/wishlist/ItemsContainer';
 import WishlistIconContainer from './containers/stages/header/WishlistIconContainer';
@@ -44,6 +45,7 @@ function App() {
                         <SearchContainer/>
                         <NavigationContainer/>
                         <WishlistIconContainer/>
+                        <SettingsIconContainer/>
                     </section>
                 </header>
                 <div className="App-content">
