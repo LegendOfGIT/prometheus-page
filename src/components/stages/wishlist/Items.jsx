@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ItemLinkBarContainer from '../../../containers/stages/items/ItemLinkBarContainer';
+import ItemWishlistIconContainer from '../../../containers/stages/items/ItemWishlistIconContainer';
 
 class Items extends React.Component {
     render() {
@@ -28,12 +30,9 @@ class Items extends React.Component {
                                         loading={'lazy'}
                                     />
                                 </a>
-                                <a
-                                    className="informationItem__wishlist informationItem__wishlist--active"
-                                    onClick={ () => { this.props.toggleWishlistItem(itemId) }}
-                                >
-                                    <img src="images/wishlist-selected.svg" />
-                                </a>
+
+                                <ItemWishlistIconContainer itemId={itemId}/>
+                                <ItemLinkBarContainer itemId={itemId}/>
                             </div>
                         )
                     })
@@ -51,8 +50,7 @@ Items.propTypes = {
         link: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired
     })),
-    renderModule: PropTypes.bool.isRequired,
-    toggleWishlistItem: PropTypes.func.isRequired
+    renderModule: PropTypes.bool.isRequired
 };
 
 export default Items;

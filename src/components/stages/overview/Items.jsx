@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ItemLinkBarContainer from '../../../containers/stages/items/ItemLinkBarContainer';
+import ItemWishlistIconContainer from '../../../containers/stages/items/ItemWishlistIconContainer';
 
 class Items extends React.Component {
     render() {
@@ -11,7 +13,7 @@ class Items extends React.Component {
             <div className={'informationItemsContainer'}>
                 {
                     this.props.informationItems.map(informationItem => {
-                        const { _id, isOnWishlist, itemId, imageLink, links, title } = informationItem;
+                        const { _id, itemId, imageLink, title } = informationItem;
                         const titleImage = informationItem['title-image'] || '';
 
                         if (!titleImage) {
@@ -30,27 +32,9 @@ class Items extends React.Component {
                                         />
                                     </a>
                                 </div>
-                                <a
-                                    className={`informationItem__wishlist ${isOnWishlist ? 'informationItem__wishlist--active' : ''}`}
-                                    onClick={ (e) => { this.props.toggleWishlistItem(itemId); e.preventDefault(); }}
-                                    onMouseEnter={(e) => { e.cancelBubble = false; }}
-                                >
-                                    <img src={ isOnWishlist ? 'images/wishlist-selected.svg' : 'images/wishlist-neutral.svg'}/>
-                                </a>
-                                <div className={'informationItem__linkBar'}>
-                                    {
-                                        links.map((link) => {
-                                            if (!link.linkImage) {
-                                                return null;
-                                            }
 
-                                            return <a href={link.link} target={link.itemId}>
-                                                <img className={'informationItem__providerLinkImage'} src={`images/${link.linkImage}`}/>
-                                            </a>
-                                        })
-                                    }
-
-                                </div>
+                                <ItemWishlistIconContainer itemId={itemId}/>
+                                <ItemLinkBarContainer itemId={itemId}/>
                             </div>
                         )
                     })
@@ -65,15 +49,10 @@ Items.propTypes = {
         _id: PropTypes.string.isRequired,
         itemId: PropTypes.string.isRequired,
         imageLink: PropTypes.string.isRequired,
-        links: PropTypes.arrayOf(PropTypes.shape({
-            link: PropTypes.string.isRequired,
-            linkImage: PropTypes.string
-        })),
         'title-image': PropTypes.string.isRequired,
         title: PropTypes.string.isRequired
     })),
-    renderModule: PropTypes.bool.isRequired,
-    toggleWishlistItem: PropTypes.func.isRequired
+    renderModule: PropTypes.bool.isRequired
 };
 
 export default Items;

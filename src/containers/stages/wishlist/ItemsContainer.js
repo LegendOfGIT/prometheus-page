@@ -1,7 +1,5 @@
 import { connect } from 'react-redux';
 import Items from '../../../components/stages/wishlist/Items';
-import toggleWishlistItem from '../../../actions/wishlist/toggleWishlistItem';
-import { bindActionCreators } from 'redux';
 import { MODULE_ID_WISHLIST } from '../../../constants';
 
 const mapStateToProps = (state) => {
@@ -11,8 +9,4 @@ const mapStateToProps = (state) => {
     };
 };
 
-const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({ toggleWishlistItem }, dispatch);
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Items);
+export default connect(mapStateToProps)(Items);
