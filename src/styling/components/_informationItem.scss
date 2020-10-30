@@ -14,36 +14,10 @@
     min-width: 250px;
   }
 
-  &__wishlist {
-    background: #fff;
-    border-radius: 50%;
-    cursor: pointer;
-    height: 24px;
-    padding: 10px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 24px;
-  }
-
   &__imageContainer {
     &:hover {
       transform: scale(1.1);
       transition: transform 0.5s;
     }
-  }
-
-  &__linkBar {
-    margin-top: 20px;
-
-    &img {
-      display: unset;
-    }
-  }
-
-  &__providerLinkImage {
-    padding-right: 8px;
-    vertical-align: middle;
-    width: 40px;
   }
 }
