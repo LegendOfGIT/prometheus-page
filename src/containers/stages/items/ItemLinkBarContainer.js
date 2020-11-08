@@ -18,7 +18,8 @@ const mapStateToProps = (state, {itemId}) => {
 
     const providerIconMapping = [
         { provider: 'amazon', iconImage: 'amazon-icon.png' },
-        { provider: 'otto', iconImage: 'otto-icon.png' }
+        { provider: 'otto', iconImage: 'otto-icon.png' },
+        { provider: 'thalia', iconImage: 'thalia-icon.png' }
     ];
 
     return {
