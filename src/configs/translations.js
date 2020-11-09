@@ -1,5 +1,9 @@
 export default {
     'de-DE': {
+        LANGUAGE_DE: 'deutsch',
+        LANGUAGE_EN: 'englisch',
+        LANGUAGE_ES: 'spanisch',
+        LANGUAGE_GR: 'griechisch',
         NAVIGATION_ALL: 'alle produkte',
         NAVIGATION_BACK: 'zurück',
         NAVIGATION_ELECTRONICS_AND_COMPUTERS: 'elektronik & computer',
