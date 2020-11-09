@@ -7,7 +7,7 @@ const SettingsIcon = ({setActiveModule}) => {
         <div className={'settings'}>
             <img
                 className={'settings__icon'}
-                src={`images/settings.png`}
+                src={'/images/settings.png'}
                 onClick={() => {
                     setActiveModule(MODULE_ID_SETTINGS);
                 }}
