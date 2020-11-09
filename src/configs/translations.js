@@ -1,9 +1,9 @@
 export default {
     'de-DE': {
-        LANGUAGE_DE: 'deutsch',
-        LANGUAGE_EN: 'englisch',
-        LANGUAGE_ES: 'spanisch',
-        LANGUAGE_GR: 'griechisch',
+        LANGUAGE_DE_DE: 'deutsch',
+        LANGUAGE_EN_GB: 'englisch',
+        LANGUAGE_ES_ES: 'spanisch',
+        LANGUAGE_GR_GR: 'griechisch',
         NAVIGATION_ALL: 'alle produkte',
         NAVIGATION_BACK: 'zurück',
         NAVIGATION_ELECTRONICS_AND_COMPUTERS: 'elektronik & computer',
@@ -16,6 +16,29 @@ export default {
         NAVIGATION_MULTIMEDIA_GAMES_PLAYSTATION_3: 'playstation 3',
         NAVIGATION_MULTIMEDIA_GAMES_PLAYSTATION_4: 'playstation 4',
         NAVIGATION_MULTIMEDIA_GAMES_XBOX_ONE: 'xbox one',
-        NAVIGATION_MULTIMEDIA_GAMES_XBOX_360: 'xbox 360'
+        NAVIGATION_MULTIMEDIA_GAMES_XBOX_360: 'xbox 360',
+        SETTINGS_DISPLAY_LANGUAGE: 'Anzeigesprache',
+        SETTINGS_TITLE: 'Einstellungen'
+    },
+    'en-GB': {
+        LANGUAGE_DE_DE: 'german',
+        LANGUAGE_EN_GB: 'english',
+        LANGUAGE_ES_ES: 'spanish',
+        LANGUAGE_GR_GR: 'greek',
+        NAVIGATION_ALL: 'all products',
+        NAVIGATION_BACK: 'back',
+        NAVIGATION_ELECTRONICS_AND_COMPUTERS: 'electronics & computers',
+        NAVIGATION_ELECTRONICS_AND_COMPUTERS_LARGE_APPLIANCES: 'large electrical appliances',
+        NAVIGATION_ELECTRONICS_AND_COMPUTERS_LARGE_APPLIANCES_FRIDGES_AND_FREEZERS: 'fridges & freezers',
+        NAVIGATION_MULTIMEDIA: 'multimedia',
+        NAVIGATION_MULTIMEDIA_GAMES: 'games',
+        NAVIGATION_MULTIMEDIA_GAMES_NINTENDO_SWITCH: 'nintendo switch',
+        NAVIGATION_MULTIMEDIA_GAMES_PC: 'pc',
+        NAVIGATION_MULTIMEDIA_GAMES_PLAYSTATION_3: 'playstation 3',
+        NAVIGATION_MULTIMEDIA_GAMES_PLAYSTATION_4: 'playstation 4',
+        NAVIGATION_MULTIMEDIA_GAMES_XBOX_ONE: 'xbox one',
+        NAVIGATION_MULTIMEDIA_GAMES_XBOX_360: 'xbox 360',
+        SETTINGS_DISPLAY_LANGUAGE: 'Displaying-Language',
+        SETTINGS_TITLE: 'Settings'
     }
 };

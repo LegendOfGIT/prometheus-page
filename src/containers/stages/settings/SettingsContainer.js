@@ -5,24 +5,27 @@ import translations from '../../../configs/translations';
 import getTranslation from '../../../helpers/getTranslation';
 
 const mapStateToProps = (state) => {
-    const languages = Object.keys(translations).map(locale => {
-        const language = locale.split('-')[0];
-
-        const languageLabel = getTranslation(state, `LANGUAGE_${language.toUpperCase()}`);
+    const displayLanguages = Object.keys(translations).map(locale => {
+        const languageLabel = getTranslation(state, `LANGUAGE_${locale.replace('-','_').toUpperCase()}`);
 
         if (!languageLabel) {
             return;
         }
 
         return {
-            language,
+            isSelected: locale === state.user.settings.displayLanguage,
             languageLabel,
             locale
         };
-    });
+    }).filter(language => language);
 
     return {
-        renderModule: MODULE_ID_SETTINGS === state.activeModule
+        displayLanguages,
+        renderModule: MODULE_ID_SETTINGS === state.activeModule,
+        translations: {
+            displayLanguageLabel: getTranslation(state, 'SETTINGS_DISPLAY_LANGUAGE'),
+            titleLabel: getTranslation(state, 'SETTINGS_TITLE'),
+        }
     };
 };
 
