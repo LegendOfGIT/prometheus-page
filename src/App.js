@@ -10,9 +10,12 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import NavigationContainer from './containers/stages/header/NavigationContainer';
 import refreshPage from './actions/refreshPage';
+import SettingsContainer from './containers/stages/settings/SettingsContainer';
+import SettingsIconContainer from './containers/stages/header/SettingsIconContainer';
 import welcomeUser from './actions/welcomeUser';
 import WishlistContainer from './containers/stages/wishlist/ItemsContainer';
 import WishlistIconContainer from './containers/stages/header/WishlistIconContainer';
+import getTranslation from './helpers/getTranslation';
 
 import './styling/main.css';
 
@@ -27,11 +30,13 @@ if ('development' === process.env.NODE_ENV) {
 }
 
 function App() {
+    refreshPage()(store.dispatch);
+
     if (!storage.getItem('prometheusFirstVisit')) {
         welcomeUser()(store.dispatch, store.getState);
     }
 
-    refreshPage()(store.dispatch);
+    document.title = getTranslation(store.getState(), 'PAGE_TITLE');
 
     return (
         <Provider store={store}>
@@ -39,15 +44,17 @@ function App() {
                 <header className="prometheus-header">
                     <section className="prometheus-header__content">
                         <section className="prometheus-header__logo">
-                            <img src={'/pLogo.png'}/>
+                            <img alt={'logo'} src={'/pLogo.png'}/>
                         </section>
                         <SearchContainer/>
                         <NavigationContainer/>
                         <WishlistIconContainer/>
+                        <SettingsIconContainer/>
                     </section>
                 </header>
                 <div className="App-content">
                     <ItemsContainer/>
+                    <SettingsContainer/>
                     <WishlistContainer/>
                 </div>
             </div>

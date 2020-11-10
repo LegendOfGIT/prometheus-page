@@ -14,18 +14,23 @@ const Breadcrumbs = (
     return <>
         <div className={'navigationItem'}>
         { isFirstNavigationLevel ? navigationAllLabel : (
-            <a onClick={() => { setCurrentNavigation(); }}>{navigationAllLabel}</a>
+            <div className={'navigationItem__link'} onClick={() => { setCurrentNavigation(); }}>{navigationAllLabel}</div>
         )}
         </div>
 
         {
-            breadCrumbElements ? breadCrumbElements.map((breadCrumbElement, index) => (
-                <React.Fragment>
+            breadCrumbElements ? breadCrumbElements.map(({ navigationId, navigationLabel, showAsLink }) => (
+                <React.Fragment key={navigationId}>
                     <div className={'navigationItemSeparator'}>|</div>
                     <div className={'navigationItem'}>
-                        {breadCrumbElement.showAsLink ? (
-                            <a onClick={() => { setCurrentNavigation(breadCrumbElement.navigationId); }}>{breadCrumbElement.navigationLabel}</a>
-                        ): breadCrumbElement.navigationLabel}
+                        {showAsLink ? (
+                            <div
+                                className={'navigationItem__link'}
+                                onClick={() => { setCurrentNavigation(navigationId); }}
+                            >
+                                {navigationLabel}
+                            </div>
+                        ): navigationLabel}
                     </div>
                 </React.Fragment>
             )) : null
@@ -35,7 +40,7 @@ const Breadcrumbs = (
             isLastNavigationLevel ? null :
             <React.Fragment>
                 <div className={'navigationItemSeparator'}>|</div>
-                <div className={'navigationItem'}><a onClick={() => {setNavigationMode('selectNavigationId')}}>...</a></div>
+                <div className={'navigationItem'}><div className={'navigationItem__link'} onClick={() => {setNavigationMode('selectNavigationId')}}>...</div></div>
             </React.Fragment>
         }
     </>;

@@ -4,14 +4,14 @@ import PropTypes from 'prop-types';
 const SelectNavigationId = ({ navigationBackLabel, nextNavigationElements, setCurrentNavigation, setNavigationMode }) => {
     return <>
         <div className={'navigationItem'}>
-            <a onClick={() => { setNavigationMode('breadcrumbs'); }}>{navigationBackLabel}</a>
+            <div className={'navigationItem__link'} onClick={() => { setNavigationMode('breadcrumbs'); }}>{navigationBackLabel}</div>
         </div>
 
-        {nextNavigationElements.map(nextNavigationElement => (
-            <React.Fragment>
+        {nextNavigationElements.map(({ navigationId, navigationLabel }) => (
+            <React.Fragment key={navigationId}>
                 <div className={'navigationItemSeparator'}>&nbsp;</div>
                 <div className={'navigationItem'}>
-                    <a onClick={() => { setCurrentNavigation(nextNavigationElement.navigationId); }}>{nextNavigationElement.navigationLabel}</a>
+                    <div className={'navigationItem__link'} onClick={() => { setCurrentNavigation(navigationId); }}>{navigationLabel}</div>
                 </div>
             </React.Fragment>
         ))}

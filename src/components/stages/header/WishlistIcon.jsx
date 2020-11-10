@@ -1,19 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {MODULE_ID_WISHLIST} from '../../../constants';
+import { MODULE_ID_WISHLIST } from '../../../constants';
 
-const WishlistIcon = ({setActiveModule, wishlistHasItems}) => {
+const WishlistIcon = ({setActiveModule, translations, wishlistHasItems}) => {
     return (
-        <div className={'wishlist'}>
+        <div className={'wishlist'} onClick={() => { setActiveModule(MODULE_ID_WISHLIST); }}>
             <img className={'wishlist__icon'}
+                 alt={translations.wishlistIconLabel}
                  src={`/images/wishlist-${wishlistHasItems ? 'selected' : 'neutral'}.svg`}
-                 onClick={() => {
-                     setActiveModule(MODULE_ID_WISHLIST);
-                 }}
             />
-            <h5 className={'wishlist__title'}>Wishlist</h5>
-        </div>)
-        ;
+            <h5 className={'wishlist__title'}>{translations.wishlistIconLabel}</h5>
+        </div>
+    );
 };
 
 WishlistIcon.defaultProps = {
@@ -22,6 +20,9 @@ WishlistIcon.defaultProps = {
 
 WishlistIcon.propTypes = {
     setActiveModule: PropTypes.func.isRequired,
+    translations: PropTypes.shape({
+        wishlistIconLabel: PropTypes.string.isRequired
+    }),
     wishlistHasItems: PropTypes.bool.isRequired
 };
 

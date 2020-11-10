@@ -1,4 +1,5 @@
 import navigation from '../../configs/navigation';
+import setActiveModule from './setActiveModule';
 import setCurrentNavigation from './setCurrentNavigation';
 
 export default () => (dispatch) => {
@@ -24,6 +25,13 @@ export default () => (dispatch) => {
     }
 
     if (firstMatchingNavigationPath) {
+        const { moduleId } = firstMatchingNavigationPath;
+
+        if (moduleId) {
+            setActiveModule(moduleId)(dispatch);
+            return;
+        }
+
         setCurrentNavigation(firstMatchingNavigationPath.to)(dispatch);
     }
 };

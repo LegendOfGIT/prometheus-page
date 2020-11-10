@@ -9,15 +9,16 @@ const ItemLinkBar = ({ links }) => {
     return (
         <div className={'item__linkBar'}>
             {
-                links.map((link) => {
-                    if (!link.linkImage) {
+                links.map(({ itemId, link, linkImage, providerName }) => {
+                    if (!linkImage) {
                         return null;
                     }
 
-                    return <a href={link.link} target={link.itemId}>
+                    return <a href={link} target={itemId}>
                         <img
+                            alt={providerName}
                             className={'item__providerLinkImage'}
-                            src={`images/${link.linkImage}`}
+                            src={`images/${linkImage}`}
                         />
                     </a>
                 })
@@ -34,7 +35,8 @@ ItemLinkBar.propTypes = {
     links: PropTypes.arrayOf(PropTypes.shape({
         itemId: PropTypes.string.isRequired,
         link: PropTypes.string.isRequired,
-        linkImage: PropTypes.string
+        linkImage: PropTypes.string,
+        providerName: PropTypes.string.isRequired
     })),
 };
 
