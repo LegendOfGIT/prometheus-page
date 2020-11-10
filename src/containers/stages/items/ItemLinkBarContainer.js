@@ -23,11 +23,16 @@ const mapStateToProps = (state, {itemId}) => {
     ];
 
     return {
-        links: correspondingInformationItems.map((item) => ({
-            itemId: item.itemId,
-            link: item.link,
-            linkImage: (providerIconMapping.find((mappingItem) => -1 !== item.itemId.indexOf(mappingItem.provider)) || {}).iconImage
-        }))
+        links: correspondingInformationItems.map((item) => {
+            const providerInformation = providerIconMapping.find((mappingItem) => -1 !== item.itemId.indexOf(mappingItem.provider)) || {};
+
+            return {
+                itemId: item.itemId,
+                link: item.link,
+                linkImage: providerInformation.iconImage,
+                providerName: providerInformation.provider
+            };
+        })
     }
 };
 

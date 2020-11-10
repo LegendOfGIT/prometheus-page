@@ -17,8 +17,14 @@ export default {
         NAVIGATION_MULTIMEDIA_GAMES_PLAYSTATION_4: 'playstation 4',
         NAVIGATION_MULTIMEDIA_GAMES_XBOX_ONE: 'xbox one',
         NAVIGATION_MULTIMEDIA_GAMES_XBOX_360: 'xbox 360',
+        PAGE_TITLE: 'Prometheus.de: Alle Produkte für jeden',
+        SEARCH_SEARCH_BUTTON_LABEL: 'Suchen',
+        SEARCH_SEARCH_TEXT_PLACEHOLDER: 'Suchbegriff',
         SETTINGS_DISPLAY_LANGUAGE: 'Anzeigesprache',
-        SETTINGS_TITLE: 'Einstellungen'
+        SETTINGS_ICON_LABEL: 'Einstellungen',
+        SETTINGS_TITLE: 'Einstellungen',
+        SETTINGS_SAVE_BUTTON_LABEL: 'Einstellungen speichern',
+        WISHLIST_ICON_LABEL: 'Wunschliste'
     },
     'en-GB': {
         LANGUAGE_DE_DE: 'german',
@@ -38,7 +44,40 @@ export default {
         NAVIGATION_MULTIMEDIA_GAMES_PLAYSTATION_4: 'playstation 4',
         NAVIGATION_MULTIMEDIA_GAMES_XBOX_ONE: 'xbox one',
         NAVIGATION_MULTIMEDIA_GAMES_XBOX_360: 'xbox 360',
+        PAGE_TITLE: 'Prometheus.de: All products for everyone',
+        SEARCH_SEARCH_BUTTON_LABEL: 'Search',
+        SEARCH_SEARCH_TEXT_PLACEHOLDER: 'search term',
         SETTINGS_DISPLAY_LANGUAGE: 'Displaying-Language',
-        SETTINGS_TITLE: 'Settings'
+        SETTINGS_ICON_LABEL: 'Settings',
+        SETTINGS_TITLE: 'Settings',
+        SETTINGS_SAVE_BUTTON_LABEL: 'Save settings',
+        WISHLIST_ICON_LABEL: 'Wishlist'
+    },
+    'es-ES': {
+        LANGUAGE_DE_DE: 'alemán',
+        LANGUAGE_EN_GB: 'ingles',
+        LANGUAGE_ES_ES: 'español',
+        LANGUAGE_GR_GR: 'griego',
+        NAVIGATION_ALL: 'todos los productos',
+        NAVIGATION_BACK: 'volver',
+        NAVIGATION_ELECTRONICS_AND_COMPUTERS: 'electrónica y ordenadores',
+        NAVIGATION_ELECTRONICS_AND_COMPUTERS_LARGE_APPLIANCES: 'electrodomésticos grandes',
+        NAVIGATION_ELECTRONICS_AND_COMPUTERS_LARGE_APPLIANCES_FRIDGES_AND_FREEZERS: 'neveras y congeladores',
+        NAVIGATION_MULTIMEDIA: 'multimedia',
+        NAVIGATION_MULTIMEDIA_GAMES: 'juegos',
+        NAVIGATION_MULTIMEDIA_GAMES_NINTENDO_SWITCH: 'nintendo switch',
+        NAVIGATION_MULTIMEDIA_GAMES_PC: 'pc',
+        NAVIGATION_MULTIMEDIA_GAMES_PLAYSTATION_3: 'playstation 3',
+        NAVIGATION_MULTIMEDIA_GAMES_PLAYSTATION_4: 'playstation 4',
+        NAVIGATION_MULTIMEDIA_GAMES_XBOX_ONE: 'xbox one',
+        NAVIGATION_MULTIMEDIA_GAMES_XBOX_360: 'xbox 360',
+        PAGE_TITLE: 'Prometheus.de: Todos los productos para todos',
+        SEARCH_SEARCH_BUTTON_LABEL: 'buscar',
+        SEARCH_SEARCH_TEXT_PLACEHOLDER: 'término de búsqueda',
+        SETTINGS_DISPLAY_LANGUAGE: 'Idioma de la pantalla',
+        SETTINGS_ICON_LABEL: 'Ajustes',
+        SETTINGS_TITLE: 'Ajustes',
+        SETTINGS_SAVE_BUTTON_LABEL: 'guardar ajustes',
+        WISHLIST_ICON_LABEL: 'Lista de deseos'
     }
 };

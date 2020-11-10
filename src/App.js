@@ -15,6 +15,7 @@ import SettingsIconContainer from './containers/stages/header/SettingsIconContai
 import welcomeUser from './actions/welcomeUser';
 import WishlistContainer from './containers/stages/wishlist/ItemsContainer';
 import WishlistIconContainer from './containers/stages/header/WishlistIconContainer';
+import getTranslation from './helpers/getTranslation';
 
 import './styling/main.css';
 
@@ -29,11 +30,13 @@ if ('development' === process.env.NODE_ENV) {
 }
 
 function App() {
+    refreshPage()(store.dispatch);
+
     if (!storage.getItem('prometheusFirstVisit')) {
         welcomeUser()(store.dispatch, store.getState);
     }
 
-    refreshPage()(store.dispatch);
+    document.title = getTranslation(store.getState(), 'PAGE_TITLE');
 
     return (
         <Provider store={store}>
@@ -41,7 +44,7 @@ function App() {
                 <header className="prometheus-header">
                     <section className="prometheus-header__content">
                         <section className="prometheus-header__logo">
-                            <img src={'/pLogo.png'}/>
+                            <img alt={'logo'} src={'/pLogo.png'}/>
                         </section>
                         <SearchContainer/>
                         <NavigationContainer/>

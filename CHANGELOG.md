@@ -6,7 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### 2020-11-09
+- Fixed   | react warnings
+- Added   | settings module
+- Added   | settings repositories
 - Changed | bound first contents to real translations
+
+### 2020-11-09
 - Added   | reducer and default state for user settings
 - Added   | modules can now be activated by address navigation
 
