@@ -13,5 +13,20 @@ export default {
         NAVIGATION_MULTIMEDIA_GAMES_PLAYSTATION_4: 'playstation 4',
         NAVIGATION_MULTIMEDIA_GAMES_XBOX_ONE: 'xbox one',
         NAVIGATION_MULTIMEDIA_GAMES_XBOX_360: 'xbox 360'
+    },
+    'el-GR': {
+        NAVIGATION_ALL: 'όλα τα προϊόντα',
+        NAVIGATION_BACK: 'πίσω',
+        NAVIGATION_ELECTRONICS_AND_COMPUTERS: 'ηλεκτρονικά είδη και υπολογιστές',
+        NAVIGATION_ELECTRONICS_AND_COMPUTERS_LARGE_APPLIANCES: 'ηλεκτρικές συσκευές',
+        NAVIGATION_ELECTRONICS_AND_COMPUTERS_LARGE_APPLIANCES_FRIDGES_AND_FREEZERS: 'ψυγεία και καταψύκτες',
+        NAVIGATION_MULTIMEDIA: 'πολυμέσα',
+        NAVIGATION_MULTIMEDIA_GAMES: 'παιχνίδια',
+        NAVIGATION_MULTIMEDIA_GAMES_NINTENDO_SWITCH: 'nintendo switch',
+        NAVIGATION_MULTIMEDIA_GAMES_PC: 'pc',
+        NAVIGATION_MULTIMEDIA_GAMES_PLAYSTATION_3: 'playstation 3',
+        NAVIGATION_MULTIMEDIA_GAMES_PLAYSTATION_4: 'playstation 4',
+        NAVIGATION_MULTIMEDIA_GAMES_XBOX_ONE: 'xbox one',
+        NAVIGATION_MULTIMEDIA_GAMES_XBOX_360: 'xbox 360'
     }
 };
