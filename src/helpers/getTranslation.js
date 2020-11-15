@@ -1,4 +1,7 @@
 export default (state, key) => {
-    const translations = (state.translations || { })['de-DE'] || ['el-GR'] || {};
+    const userSettings = state.user.settings;
+    const { displayLanguage = 'de-DE' } = userSettings;
+
+    const translations = (state.translations || { })[displayLanguage] || {};
     return translations[key] || '';
 };

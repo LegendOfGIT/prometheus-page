@@ -5,10 +5,26 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### 2020-11-09
+- Fixed   | react warnings
+- Added   | settings module
+- Added   | settings repositories
+- Changed | bound first contents to real translations
+
+### 2020-11-09
+- Added   | reducer and default state for user settings
+- Added   | modules can now be activated by address navigation
+
+### 2020-11-08
+- Added   | container and component for user settings
+- Added   | setting "display language"
+- Added   | basic styling for settings
+
 ### 2020-10-30
 - Changed | item wishlist-icon is now a separate container/component
 - Changed | item link bar now a separate container/component
 - Added   | item link bar to wishlist
+- Added   | added settings icon to header
 
 ### 2020-10-29
 - Added   | provider links in overview

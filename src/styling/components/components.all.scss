@@ -1,9 +1,11 @@
 @import "app";
 @import "app-content";
-@import "prometheus-header";
-@import "prometheus-wishlist";
-@import "informationItemsContainer";
 @import "informationItem";
+@import "informationItemsContainer";
 @import "item";
+@import "prometheus-header";
 @import "prometheus-navigation-container";
 @import "prometheus-search";
+@import "prometheus-settings";
+@import "prometheus-wishlist";
+@import "settings";

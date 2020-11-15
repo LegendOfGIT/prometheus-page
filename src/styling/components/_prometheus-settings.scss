@@ -1,0 +1,54 @@
+.settingsContainer {
+  margin-top: 20px;
+
+  input {
+    background: #282c34;
+    border: 2px solid #000;
+    color: #FFF;
+    height: inherit;
+    margin-top: 40px;
+    min-height: 30px;
+    padding: 10px;
+    transition: all .2s ease;
+    outline: none;
+
+    &:focus {
+      border-color: #fff;
+      transition: all .2s ease;
+    }
+  }
+
+  select {
+    background: #282c34;
+    border: 2px solid #000;
+    color: #FFF;
+    height: inherit;
+    margin-top: 40px;
+    min-height: 30px;
+    padding: 10px;
+    transition: all .2s ease;
+    outline: none;
+
+    &:focus {
+      border-color: #fff;
+      transition: all .2s ease;
+    }
+  }
+
+  &__button {
+    margin-left: 5px;
+    text-transform: uppercase;
+
+    &:active {
+      background: #fff;
+      border-color: #fff;
+      color: #282c34;
+      font-weight: bold;
+    }
+  }
+
+  &__select {
+    margin-left: 5px;
+    text-transform: uppercase;
+  }
+}

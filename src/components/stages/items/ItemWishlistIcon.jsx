@@ -8,10 +8,11 @@ const ItemWishlistIcon = ({ isOnWishlist, itemId, toggleWishlistItem }) => {
 
     return (
         <a
+            href={'!#'}
             className={`item__wishlist ${isOnWishlist ? 'item__wishlist--active' : ''}`}
             onClick={ (e) => { toggleWishlistItem(itemId); e.preventDefault(); }}
         >
-            <img src={ isOnWishlist ? 'images/wishlist-selected.svg' : 'images/wishlist-neutral.svg'}/>
+            <img alt={'add to wishlist'} src={ isOnWishlist ? 'images/wishlist-selected.svg' : 'images/wishlist-neutral.svg'}/>
         </a>
     );
 }
