@@ -13,7 +13,6 @@ const SettingsIcon = ({setActiveModule, translations}) => {
                     setActiveModule(MODULE_ID_SETTINGS);
                 }}
             />
-            <h5 className={'settings__title'}>{translations.settingsIconLabel}</h5>
         </div>
     );
 }

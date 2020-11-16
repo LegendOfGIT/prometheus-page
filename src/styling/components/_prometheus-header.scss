@@ -2,8 +2,8 @@
   background: #355f7d;
   color: white;
   font-size: calc(10px + 2vmin);
+  height: 120px;
   justify-content: center;
-  min-height: 10vh;
   position: fixed;
   text-align: center;
   width: 100%;
@@ -23,7 +23,7 @@
   }
 
   &__logo {
-    left: 20px;
+    left: 5px;
     position: absolute;
     top: 10px;
     width: 60px;

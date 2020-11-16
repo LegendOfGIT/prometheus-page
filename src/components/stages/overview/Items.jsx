@@ -22,15 +22,13 @@ class Items extends React.Component {
 
                         return (
                             <div className={'informationItem'} key={`informationItem_${_id}`}>
-                                <div className={'informationItem__imageContainer'}>
-                                    <a href={imageLink} target={_id}>
-                                        <img
-                                            className={'informationItem__image'}
-                                            alt={title}
-                                            src={titleImage}
-                                            loading={'lazy'}
-                                        />
-                                    </a>
+                                <div className={'informationItem__imageContainer'} onClick={() => { this.props.setSelectedItem(itemId); }}>
+                                    <img
+                                        className={'informationItem__image'}
+                                        alt={title}
+                                        src={titleImage}
+                                        loading={'lazy'}
+                                    />
                                 </div>
 
                                 <ItemWishlistIconContainer itemId={itemId}/>
@@ -52,7 +50,8 @@ Items.propTypes = {
         'title-image': PropTypes.string.isRequired,
         title: PropTypes.string.isRequired
     })),
-    renderModule: PropTypes.bool.isRequired
+    renderModule: PropTypes.bool.isRequired,
+    setSelectedItem: PropTypes.func.isRequired
 };
 
 export default Items;

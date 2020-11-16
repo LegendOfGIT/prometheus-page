@@ -4,6 +4,7 @@ import ItemsContainer from './containers/stages/overview/ItemsContainer';
 import SearchContainer from './containers/stages/header/SearchContainer';
 import { Provider } from 'react-redux';
 import { applyMiddleware, createStore } from 'redux';
+import getTranslation from './helpers/getTranslation';
 import reducers from './reducers/reducers';
 import storageStub from './storage/storageStub';
 import thunk from 'redux-thunk';
@@ -12,10 +13,10 @@ import NavigationContainer from './containers/stages/header/NavigationContainer'
 import refreshPage from './actions/refreshPage';
 import SettingsContainer from './containers/stages/settings/SettingsContainer';
 import SettingsIconContainer from './containers/stages/header/SettingsIconContainer';
+import SingleItemViewContainer from './containers/stages/itemview/SingleItemViewContainer';
 import welcomeUser from './actions/welcomeUser';
 import WishlistContainer from './containers/stages/wishlist/ItemsContainer';
 import WishlistIconContainer from './containers/stages/header/WishlistIconContainer';
-import getTranslation from './helpers/getTranslation';
 
 import './styling/main.css';
 
@@ -50,6 +51,7 @@ function App() {
                         <NavigationContainer/>
                         <WishlistIconContainer/>
                         <SettingsIconContainer/>
+                        <SingleItemViewContainer/>
                     </section>
                 </header>
                 <div className="App-content">

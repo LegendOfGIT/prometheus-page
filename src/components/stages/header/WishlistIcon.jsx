@@ -9,7 +9,6 @@ const WishlistIcon = ({setActiveModule, translations, wishlistHasItems}) => {
                  alt={translations.wishlistIconLabel}
                  src={`/images/wishlist-${wishlistHasItems ? 'selected' : 'neutral'}.svg`}
             />
-            <h5 className={'wishlist__title'}>{translations.wishlistIconLabel}</h5>
         </div>
     );
 };

@@ -8,10 +8,13 @@ const Search = ({ activeNavigation, searchInformationItems, translations }) => {
     }, 200);
 
     return <div className={'searchContainer'}>
-        <input id={'searchPattern'} type={'text'} className={'searchContainer__inputField'}
+        <input id={'searchPattern'} type={'text'} className={'searchContainer searchContainer__inputField'}
                placeholder={translations.searchTextPlaceholder} onKeyUp={() => search() } />
         <input type={'button'} className={'button searchContainer__button'}
                value={translations.searchButtonLabel} onClick={() => search()} />
+       <div className={'searchContainer__icon'}>
+           <img className={'searchContainer__icon--image'} src={'images/search-icon.png'} onClick={() => search()}/>
+       </div>
     </div>;
 }
 

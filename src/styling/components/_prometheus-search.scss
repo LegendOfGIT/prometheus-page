@@ -1,5 +1,5 @@
 .searchContainer {
-  margin-top: 20px;
+  margin-top: 5px;
 
   input {
     background: #282c34;
@@ -23,6 +23,8 @@
   }
 
   &__button {
+    display: none;
+
     margin-left: 5px;
     text-transform: uppercase;
     width: 100px;
@@ -35,4 +37,15 @@
     }
   }
 
+  &__icon {
+    display: inline-block;
+    margin-left: 5px;
+    min-height: 30px;
+    vertical-align: middle;
+    width: 30px;
+
+    &--image {
+      width: 100%;
+    }
+  }
 }
