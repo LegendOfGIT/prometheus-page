@@ -27,7 +27,7 @@ export default {
         WISHLIST_ICON_LABEL: 'Wunschliste'
     },
     'el-GR': {
-        LANGUAGE_DE_DE: 'Γερμανός',
+        LANGUAGE_DE_DE: 'Γερμανικά',
         LANGUAGE_EL_GR: 'Ελληνικά',
         LANGUAGE_EN_GB: 'Αγγλικά',
         LANGUAGE_ES_ES: 'Ισπανικά',
@@ -44,11 +44,11 @@ export default {
         NAVIGATION_MULTIMEDIA_GAMES_PLAYSTATION_4: 'playstation 4',
         NAVIGATION_MULTIMEDIA_GAMES_XBOX_ONE: 'xbox one',
         NAVIGATION_MULTIMEDIA_GAMES_XBOX_360: 'xbox 360',
-        SETTINGS_DISPLAY_LANGUAGE: 'Γλώσσα προβολής',
+        SETTINGS_DISPLAY_LANGUAGE: 'Γλώσσα',
         SETTINGS_ICON_LABEL: 'Ρυθμίσεις',
         SETTINGS_TITLE: 'Ρυθμίσεις',
         SETTINGS_SAVE_BUTTON_LABEL: 'αποθήκευση ρυθμίσεων',
-        WISHLIST_ICON_LABEL: 'Επιθυμητά'
+        WISHLIST_ICON_LABEL: 'Αγαπημένα'
     },
     'en-GB': {
         LANGUAGE_DE_DE: 'german',
