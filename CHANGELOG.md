@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### 2020-11-17
+- Changed | refactored header icons css
+- Changed | added toggle for search field
+
 ### 2020-11-16
 - Added   | added rudimental spv
 - Changed | refactored styling to "mobile first"

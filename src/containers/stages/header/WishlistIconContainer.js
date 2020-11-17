@@ -5,7 +5,10 @@ import WishlistIcon from '../../../components/stages/header/WishlistIcon';
 import getTranslation from '../../../helpers/getTranslation';
 
 const mapStateToProps = (state) => {
+    const { isSearchFieldActive } = state.search;
+
     return {
+        renderIcon: !isSearchFieldActive,
         translations: {
             wishlistIconLabel: getTranslation(state, 'WISHLIST_ICON_LABEL')
         },

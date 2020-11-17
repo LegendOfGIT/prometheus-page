@@ -5,7 +5,10 @@ import SettingsIcon from '../../../components/stages/header/SettingsIcon';
 import getTranslation from "../../../helpers/getTranslation";
 
 const mapStateToProps = (state) => {
+    const { isSearchFieldActive } = state.search;
+
     return {
+        renderIcon: !isSearchFieldActive,
         translations: {
             settingsIconLabel: getTranslation(state, 'SETTINGS_ICON_LABEL')
         }

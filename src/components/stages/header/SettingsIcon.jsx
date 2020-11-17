@@ -2,12 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { MODULE_ID_SETTINGS } from '../../../constants';
 
-const SettingsIcon = ({setActiveModule, translations}) => {
+const SettingsIcon = ({ renderIcon, setActiveModule, translations }) => {
+    if (!renderIcon) {
+        return null;
+    }
+
     return (
-        <div className={'settings'}>
+        <div className={'prometheus-header__settings'}>
             <img
                 alt={translations.settingsIconLabel}
-                className={'settings__icon'}
+                className={'prometheus-header__settingsIcon'}
                 src={'/images/settings.png'}
                 onClick={() => {
                     setActiveModule(MODULE_ID_SETTINGS);
@@ -18,6 +22,7 @@ const SettingsIcon = ({setActiveModule, translations}) => {
 }
 
 SettingsIcon.propTypes = {
+    renderIcon: PropTypes.bool.isRequired,
     setActiveModule: PropTypes.func.isRequired,
     translations: PropTypes.shape({
         settingsIconLabel: PropTypes.string.isRequired

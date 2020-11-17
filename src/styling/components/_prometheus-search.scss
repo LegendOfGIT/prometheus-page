@@ -2,8 +2,6 @@
   margin-top: 5px;
 
   input {
-    background: #282c34;
-    border: 2px solid #000;
     color: #FFF;
     height: inherit;
     min-height: 30px;
@@ -18,8 +16,23 @@
   }
 
   &__inputField {
+    background-color: unset;
+    border: 0;
+    border-bottom: 2px solid #FFF;
+    display: block;
+    left: 65px;
     max-width: 520px;
-    width: 50%;
+    position: absolute;
+    top: 0;
+    width: 220px;
+
+    &::placeholder {
+      color: #FFF;
+    }
+
+    &--inactive {
+      display: none;
+    }
   }
 
   &__button {
@@ -28,24 +41,12 @@
     margin-left: 5px;
     text-transform: uppercase;
     width: 100px;
+
     &:active {
       background: #fff;
       border-color: #fff;
       color: #282c34;
       font-weight: bold;
-
-    }
-  }
-
-  &__icon {
-    display: inline-block;
-    margin-left: 5px;
-    min-height: 30px;
-    vertical-align: middle;
-    width: 30px;
-
-    &--image {
-      width: 100%;
     }
   }
 }

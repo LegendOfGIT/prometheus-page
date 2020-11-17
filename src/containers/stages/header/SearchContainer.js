@@ -1,14 +1,17 @@
 import { connect } from 'react-redux';
 import Items from '../../../components/stages/header/Search';
 import searchInformationItems from '../../../actions/items/searchInformationItems';
+import setIsSearchFieldActive from '../../../actions/search/setIsSearchFieldActive';
 import { bindActionCreators } from 'redux';
 import getTranslation from '../../../helpers/getTranslation';
 
 const mapStateToProps = (state) => {
     const { activeNavigation } = state.navigation;
+    const { isSearchFieldActive } = state.search;
 
     return {
         activeNavigation,
+        isSearchFieldActive,
         translations: {
             searchButtonLabel: getTranslation(state, 'SEARCH_SEARCH_BUTTON_LABEL'),
             searchTextPlaceholder: getTranslation(state, 'SEARCH_SEARCH_TEXT_PLACEHOLDER')
@@ -17,7 +20,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({ searchInformationItems }, dispatch);
+    return bindActionCreators({ searchInformationItems, setIsSearchFieldActive }, dispatch);
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Items);
