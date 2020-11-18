@@ -11,6 +11,7 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import NavigationContainer from './containers/stages/header/NavigationContainer';
 import refreshPage from './actions/refreshPage';
+import LogoIconContainer from './containers/stages/header/LogoIconContainer';
 import SettingsContainer from './containers/stages/settings/SettingsContainer';
 import SettingsIconContainer from './containers/stages/header/SettingsIconContainer';
 import SingleItemViewContainer from './containers/stages/itemview/SingleItemViewContainer';
@@ -44,9 +45,7 @@ function App() {
             <div className="App">
                 <header className="prometheus-header">
                     <section className="prometheus-header__content">
-                        <section className="prometheus-header__logo">
-                            <img alt={'logo'} src={'/pLogo.png'}/>
-                        </section>
+                        <LogoIconContainer/>
                         <SearchContainer/>
                         <NavigationContainer/>
                         <WishlistIconContainer/>

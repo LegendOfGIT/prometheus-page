@@ -1,32 +1,46 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import debounce from '../../../helpers/debounce';
 
 const Search = ({ activeNavigation, isSearchFieldActive, searchInformationItems, setIsSearchFieldActive, translations }) => {
-    const search = debounce(() => {
-        searchInformationItems(activeNavigation, document.getElementById('searchPattern').value);
-    }, 200);
+    const search = () => {
+        if (isSearchFieldActive) {
+            searchInformationItems(activeNavigation, document.getElementById('searchPattern').value);
+        }
+
+        setIsSearchFieldActive(!isSearchFieldActive);
+    };
+
+    // Similar to componentDidMount and componentDidUpdate:
+    useEffect(() => {
+        if (isSearchFieldActive) {
+            document.getElementById('searchPattern').focus();
+        }
+    });
+
 
     return <div className={'searchContainer'}>
+        <div className={ isSearchFieldActive ? 'searchContainer__inputFieldBack' : 'searchContainer--inactive'}>
+            <img
+                className={'searchContainer__inputFieldBack--icon'}
+                src={'images/back-arrow.png'}
+                onClick={() => { setIsSearchFieldActive(!isSearchFieldActive); }}
+            />
+        </div>
+
         <input
             id={'searchPattern'}
+            tabIndex={-1}
             type={'text'}
-            className={`searchContainer searchContainer__inputField${isSearchFieldActive ? '' : '--inactive'}`}
+            className={`searchContainer ${isSearchFieldActive ? 'searchContainer__inputField' : 'searchContainer--inactive'}`}
             placeholder={translations.searchTextPlaceholder}
-            onKeyUp={() => search() }
-        />
-        <input
-            type={'button'}
-            className={'button searchContainer__button'}
-            value={translations.searchButtonLabel}
-            onClick={() => search()}
+            onKeyUp={(e) => { if (e.key === 'Enter') { search(); }}}
         />
 
         <div className={`prometheus-header__search prometheus-header__search${isSearchFieldActive ? '--active' : ''}`}>
            <img
                className={'prometheus-header__search--icon'}
                src={'images/search-icon.png'}
-               onClick={() => { setIsSearchFieldActive(!isSearchFieldActive); }}
+               onClick={() => { search(); }}
            />
         </div>
     </div>;
