@@ -13,7 +13,7 @@ class Items extends React.Component {
             <div className={'informationItemsContainer'}>
                 {
                     this.props.informationItems.map(informationItem => {
-                        const { _id, itemId, imageLink, title } = informationItem;
+                        const { _id, itemId, title } = informationItem;
                         const titleImage = informationItem['title-image'] || '';
 
                         if (!titleImage) {
@@ -21,19 +21,23 @@ class Items extends React.Component {
                         }
 
                         return (
-                            <div className={'informationItem'} key={`informationItem_${_id}`}>
-                                <div className={'informationItem__imageContainer'} onClick={() => { this.props.setSelectedItem(itemId); }}>
-                                    <img
-                                        className={'informationItem__image'}
-                                        alt={title}
-                                        src={titleImage}
-                                        loading={'lazy'}
-                                    />
+                            <>
+                                <div className={'informationItem'} key={`informationItem_${_id}`}>
+                                    <div className={'informationItem__imageContainer'} onClick={() => { this.props.setSelectedItem(itemId); }}>
+                                        <img
+                                            className={'informationItem__image'}
+                                            alt={title}
+                                            src={titleImage}
+                                            loading={'lazy'}
+                                        />
+                                    </div>
+                                    <div className={'informationItem__contentContainer'}>
+                                        <ItemWishlistIconContainer itemId={itemId}/>
+                                        <ItemLinkBarContainer itemId={itemId}/>
+                                    </div>
                                 </div>
-
-                                <ItemWishlistIconContainer itemId={itemId}/>
-                                <ItemLinkBarContainer itemId={itemId}/>
-                            </div>
+                                <div className={'informationItem__divider'}/>
+                            </>
                         )
                     })
                 }

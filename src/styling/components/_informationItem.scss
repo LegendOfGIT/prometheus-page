@@ -1,23 +1,42 @@
 .informationItem {
-  display: inline-block;
-  margin: 10px;
-  min-height: 400px;
-  padding: 17px;
+  margin-bottom: 10px;
   position: relative;
   overflow: hidden;
   vertical-align: top;
+  width: 100%;
+
+  &__contentContainer {
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: top;
+    width: 190px;
+  }
+
+  &__divider {
+    border-top: 1px solid #355f7d;
+    left: -20px;
+    padding-bottom: 15px;
+    position: relative;
+    width: 365px;
+  }
 
   &__image {
     border-radius: 10px;
-    max-width: 250px;
-    max-height: 350px;
-    min-width: 250px;
+    max-width: 120px;
+    max-height: 200px;
+    min-width: 60px;
   }
 
   &__imageContainer {
+    display: inline-block;
+
     &:hover {
       transform: scale(1.1);
       transition: transform 0.5s;
     }
+  }
+
+  &sContainer {
+    width: 90%;
   }
 }

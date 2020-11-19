@@ -14,13 +14,15 @@ const ItemLinkBar = ({ links }) => {
                         return null;
                     }
 
-                    return <a href={link} target={itemId}>
-                        <img
-                            alt={providerName}
-                            className={'item__providerLinkImage'}
-                            src={`images/${linkImage}`}
-                        />
-                    </a>
+                    return <div className={'item__providerLinkContainer'}>
+                        <a href={link} target={itemId}>
+                            <img
+                                alt={providerName}
+                                className={'item__providerLinkImage'}
+                                src={`images/${linkImage}`}
+                            />
+                        </a>
+                    </div>
                 })
             }
         </div>
