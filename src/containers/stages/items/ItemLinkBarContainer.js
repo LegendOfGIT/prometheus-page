@@ -25,11 +25,19 @@ const mapStateToProps = (state, {itemId}) => {
     return {
         links: correspondingInformationItems.map((item) => {
             const providerInformation = providerIconMapping.find((mappingItem) => -1 !== item.itemId.indexOf(mappingItem.provider)) || {};
+            const priceCurrent = item['price-current'] || 0;
+            const priceInitial = item['price-initial'] || 0;
+
+            const getReducedPrice = () => priceCurrent > 0 && priceInitial > 0 && priceCurrent !== priceInitial
+                ? priceCurrent.toFixed(2)
+                : undefined;
 
             return {
                 itemId: item.itemId,
                 link: item.link,
                 linkImage: providerInformation.iconImage,
+                priceInitial: priceInitial === 0 ? undefined : priceInitial.toFixed(2),
+                priceReduced: getReducedPrice(),
                 providerName: providerInformation.provider
             };
         })

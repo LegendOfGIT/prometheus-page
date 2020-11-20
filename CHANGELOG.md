@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### 2020-11-21
+- Added | added item prices in overview
+
 ### 2020-11-19
 - Changed | styling of item overview (smallest breakpoint first)
 

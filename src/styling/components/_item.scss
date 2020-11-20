@@ -1,10 +1,34 @@
 .item {
   &__linkBar {
+    font-size: 0.89em;
     min-height: 30px;
     vertical-align: middle;
 
     &img {
       display: unset;
+    }
+  }
+
+  &__priceInitial {
+    display: inline-block;
+    padding-top: 22px;
+
+    &--reduced {
+      text-decoration: line-through;
+    }
+  }
+
+  &__priceReduced {
+    background-color: seagreen;
+    border-radius: 15px;
+    display: inline-block;
+    padding: 7px;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+
+    @media screen and (min-width: 640px) {
+      right: 255px;
     }
   }
 
@@ -20,6 +44,10 @@
     padding: 10px;
     vertical-align: middle;
     width: 40px;
+
+    @media screen and (min-width: 640px) {
+      padding-left: 20px;
+    }
   }
 
   &__wishlist {
