@@ -36,7 +36,6 @@ class Items extends React.Component {
                                         <ItemLinkBarContainer itemId={itemId}/>
                                     </div>
                                 </div>
-                                <div className={'informationItem__divider'}/>
                             </>
                         )
                     })

@@ -1,43 +1,30 @@
 .informationItem {
-  margin-bottom: 10px;
+  border-bottom: solid 1px #355f7d;
+  border-left: solid 1px #355f7d;
+  display: inline-block;
+  min-height: 340px;
+  min-width: 123px;
+  padding: 28px;
   position: relative;
   overflow: hidden;
   vertical-align: top;
-  width: 100%;
 
   &__contentContainer {
-    display: inline-block;
-    margin-left: 10px;
-    vertical-align: top;
-    width: 190px;
+    margin-top: 10px;
 
     @media screen and (min-width: 640px) {
       width: 445px;
     }
   }
 
-  &__divider {
-    border-top: 1px solid #355f7d;
-    left: -20px;
-    padding-bottom: 15px;
-    position: relative;
-    width: 365px;
-
-    @media screen and (min-width: 640px) {
-      width: 610px;
-    }
-  }
-
   &__image {
     border-radius: 10px;
     max-width: 120px;
-    max-height: 200px;
+    max-height: 192px;
     min-width: 60px;
   }
 
   &__imageContainer {
-    display: inline-block;
-
     &:hover {
       transform: scale(1.1);
       transition: transform 0.5s;
@@ -45,6 +32,6 @@
   }
 
   &sContainer {
-    width: 90%;
+    width: 100%;
   }
 }
