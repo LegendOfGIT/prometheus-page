@@ -28,20 +28,18 @@
     top: 232px;
 
     @media screen and (min-width: 640px) {
-      right: 255px;
+      right: 55px;
     }
   }
 
   &__providerLinkContainer {
-    background-color: #355f7d;
-    border: 1px solid #000;
     margin-bottom: 2px;
-    min-height: 60px;
+    padding-bottom: 5px;
     width: 100%;
   }
 
   &__providerLinkImage {
-    padding: 10px;
+    padding-right: 15px;
     vertical-align: middle;
     width: 40px;
 
@@ -61,5 +59,9 @@
     right: 13px;
     top: 8px;
     width: 18px;
+
+    @media screen and (min-width: 640px) {
+      right: 80px;
+    }
   }
 }
