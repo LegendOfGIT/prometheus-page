@@ -1,6 +1,5 @@
 .informationItem {
   border-bottom: solid 1px #355f7d;
-  border-left: solid 1px #355f7d;
   display: inline-block;
   min-height: 340px;
   min-width: 123px;
@@ -10,12 +9,31 @@
   text-align: center;
   vertical-align: top;
 
+  @media screen and (min-width: 411px) {
+    min-width: 149px;
+  }
+
+  @media screen and (min-width: 731px) {
+    min-width: 309px;
+  }
+
+  @media screen and (min-width: 823px) {
+    border-left: solid 1px #355f7d;
+    min-width: 217px;
+  }
+
+  &:nth-child(even) {
+    border-left: solid 1px #355f7d;
+  }
+
+  &:nth-child(3n+1) {
+    @media screen and (min-width: 823px) {
+      border-left: unset;
+    }
+  }
+
   &__contentContainer {
     margin-top: 10px;
-
-    @media screen and (min-width: 640px) {
-      min-width: 263px;
-    }
   }
 
   &__image {
@@ -27,6 +45,7 @@
 
   &__imageContainer {
     padding-bottom: 10px;
+    padding-top: 10px;
 
     &:hover {
       transform: scale(1.1);
@@ -35,6 +54,7 @@
   }
 
   &sContainer {
+    text-align: center;
     width: 100%;
   }
 }

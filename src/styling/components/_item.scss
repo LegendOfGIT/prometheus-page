@@ -19,16 +19,20 @@
   }
 
   &__priceReduced {
-    background-color: seagreen;
+    background-color: rgba(46, 139, 87, 0.7);
     border-radius: 15px;
     display: inline-block;
     padding: 7px;
     position: absolute;
     right: 10px;
-    top: 232px;
+    top: 258px;
 
     @media screen and (min-width: 640px) {
-      right: 55px;
+      right: 60px;
+    }
+
+    @media screen and (min-width: 823px) {
+      right: 40px;
     }
   }
 
@@ -57,11 +61,23 @@
     padding: 10px;
     position: absolute;
     right: 13px;
-    top: 8px;
+    top: 18px;
     width: 18px;
+
+    @media screen and (min-width: 411px) {
+      right: 23px;
+    }
 
     @media screen and (min-width: 640px) {
       right: 80px;
+    }
+
+    @media screen and (min-width: 731px) {
+      right: 102px;
+    }
+
+    @media screen and (min-width: 823px) {
+      right: 55px;
     }
   }
 }
