@@ -24,15 +24,32 @@
     display: inline-block;
     padding: 7px;
     position: absolute;
-    right: 10px;
+    right: 29px;
     top: 258px;
+
+    @media screen and (min-width: 568px) {
+      right: 44px;
+    }
 
     @media screen and (min-width: 640px) {
       right: 60px;
+      top: 271px;
+    }
+
+    @media screen and (min-width: 720px) {
+      right: 14px;
+    }
+
+    @media screen and (min-width: 731px) {
+      right: 21px;
     }
 
     @media screen and (min-width: 823px) {
       right: 40px;
+    }
+
+    @media screen and (min-width: 1366px) {
+      right: 55px;
     }
   }
 
@@ -52,6 +69,18 @@
     }
   }
 
+  &__title {
+    display: inline-block;
+    font-size: 14px;
+    max-width: 160px;
+    min-height: 60px;
+
+    @media screen and (min-width: 640px) {
+      font-size: 16px;
+      max-width: 207px;
+    }
+  }
+
   &__wishlist {
     background: #fff;
     border: 1px solid #4AA7EB;
@@ -60,24 +89,56 @@
     height: 18px;
     padding: 10px;
     position: absolute;
-    right: 13px;
+    right: 61px;
     top: 18px;
     width: 18px;
+
+    @media screen and (min-width: 360px) {
+      right: 12px;
+    }
 
     @media screen and (min-width: 411px) {
       right: 23px;
     }
 
+    @media screen and (min-width: 540px) {
+      right: 10px;
+    }
+
+    @media screen and (min-width: 568px) {
+      right: 62px;
+    }
+
     @media screen and (min-width: 640px) {
-      right: 80px;
+      right: 69px;
     }
 
-    @media screen and (min-width: 731px) {
-      right: 102px;
+    @media screen and (min-width: 653px) {
+      right: 84px;
     }
 
-    @media screen and (min-width: 823px) {
+    @media screen and (min-width: 667px) {
+      right: 87px;
+    }
+
+    @media screen and (min-width: 720px) {
+      right: 42px;
+    }
+
+    @media screen and (min-width: 768px) {
+      right: 49px;
+    }
+
+    @media screen and (min-width: 812px) {
       right: 55px;
+    }
+
+    @media screen and (min-width: 1024px) {
+      right: 49px;
+    }
+
+    @media screen and (min-width: 1366px) {
+      right: 90px;
     }
   }
 }

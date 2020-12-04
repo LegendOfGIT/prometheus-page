@@ -33,6 +33,7 @@ class Items extends React.Component {
                                     </div>
                                     <div className={'informationItem__contentContainer'}>
                                         <ItemWishlistIconContainer itemId={itemId}/>
+                                        <div className={'item__title'}>{title}</div>
                                         <ItemLinkBarContainer itemId={itemId}/>
                                     </div>
                                 </div>

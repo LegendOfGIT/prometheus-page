@@ -1,7 +1,7 @@
 .informationItem {
   border-bottom: solid 1px #355f7d;
   display: inline-block;
-  min-height: 340px;
+  min-height: 400px;
   min-width: 279px;
   padding-bottom: 28px;
   padding-top: 28px;
@@ -88,6 +88,10 @@
     min-width: 340px;
   }
 
+  @media screen and (min-width: 1920px) {
+    min-width: 474px;
+  }
+
   &:nth-child(even) {
     border-left: solid 1px #355f7d;
   }
@@ -111,6 +115,11 @@
     max-width: 120px;
     max-height: 192px;
     min-width: 60px;
+
+    @media screen and (min-width: 640px) {
+      max-width: 143px;
+      max-height: 205px;
+    }
   }
 
   &__imageContainer {
