@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import Items from '../../../components/stages/overview/Items';
 import setSelectedItem from '../../../actions/itemview/setSelectedItem';
 import { bindActionCreators } from 'redux';
-import { MODULE_ID_ITEM_OVERVIEW } from '../../../constants';
+import { MODULE_ID_ITEM_OVERVIEW, STATE_PENDING } from '../../../constants';
 
 const mapStateToProps = (state) => {
     let informationItems = (state.informationItems || []).filter(item => item['title-image']);
@@ -14,7 +14,8 @@ const mapStateToProps = (state) => {
 
     return {
         informationItems,
-        renderModule: MODULE_ID_ITEM_OVERVIEW === state.activeModule
+        renderModule: MODULE_ID_ITEM_OVERVIEW === state.activeModule,
+        showLoadingAnimation: STATE_PENDING === state.currentState,
     };
 };
 

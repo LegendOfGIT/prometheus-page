@@ -1,9 +1,15 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { STATE_IDLE, STATE_PENDING } from "../../../constants";
 
-const Search = ({ activeNavigation, isSearchFieldActive, searchInformationItems, setIsSearchFieldActive, translations }) => {
+const Search = ({ activeNavigation, isSearchFieldActive, searchInformationItems, setCurrentState, setIsSearchFieldActive, translations }) => {
     const search = () => {
         if (isSearchFieldActive) {
+            setCurrentState(STATE_PENDING);
+            setTimeout(() => {
+                setCurrentState(STATE_IDLE);
+            }, 4000);
+
             searchInformationItems(activeNavigation, document.getElementById('searchPattern').value);
         }
 

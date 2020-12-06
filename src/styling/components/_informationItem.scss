@@ -1,5 +1,5 @@
 .informationItem {
-  border-bottom: solid 1px #355f7d;
+  border-bottom: solid 1px #071436;
   display: inline-block;
   min-height: 400px;
   min-width: 279px;
@@ -31,7 +31,7 @@
   }
 
   @media screen and (min-width: 540px) {
-    border-left: solid 1px #355f7d;
+    border-left: solid 1px #071436;
     min-width: 179px;
   }
 
@@ -60,7 +60,7 @@
   }
 
   @media screen and (min-width: 731px) {
-    border-left: solid 1px #355f7d;
+    border-left: solid 1px #071436;
     min-width: 242px;
   }
 
@@ -81,6 +81,8 @@
   }
 
   @media screen and (min-width: 1024px) {
+    border-bottom: unset;
+    border-left: unset;
     min-width: 255px;
   }
 
@@ -93,16 +95,16 @@
   }
 
   &:nth-child(even) {
-    border-left: solid 1px #355f7d;
+    border-left: solid 1px #071436;
+
+    @media screen and (min-width: 1024px) {
+      border-left: unset;
+    }
   }
 
   &:nth-child(3n+1) {
     @media screen and (min-width: 823px) {
       border-left: unset;
-    }
-
-    @media screen and (min-width: 1024px) {
-      border-left: solid 1px #355f7d;
     }
   }
 

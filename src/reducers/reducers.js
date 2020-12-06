@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import activeModule from './activeModule';
+import currentState from './currentState';
 import informationItems from './informationItems';
 import navigation from './navigation';
 import search from './search';
@@ -10,6 +11,7 @@ import wishlist from './wishlist';
 
 export default combineReducers({
     activeModule,
+    currentState,
     informationItems,
     navigation,
     search,
