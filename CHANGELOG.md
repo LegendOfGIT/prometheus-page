@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### 2020-12-07
+- Added   | added loading animation for different modules
+
 ### 2020-12-06
 - Added   | added first loading animation :)
 

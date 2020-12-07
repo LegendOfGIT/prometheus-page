@@ -5,6 +5,12 @@ import ItemWishlistIconContainer from '../../../containers/stages/items/ItemWish
 
 class Items extends React.Component {
     render() {
+        if (this.props.showLoadingAnimation) {
+            return <div className="loadingAnimationContainer">
+                <div className="loadingAnimation"/>
+            </div>;
+        }
+
         if (!this.props.renderModule) {
             return null;
         }
@@ -50,7 +56,8 @@ Items.propTypes = {
         link: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired
     })),
-    renderModule: PropTypes.bool.isRequired
+    renderModule: PropTypes.bool.isRequired,
+    showLoadingAnimation: PropTypes.bool.isRequired
 };
 
 export default Items;

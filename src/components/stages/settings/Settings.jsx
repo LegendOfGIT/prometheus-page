@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const Settings = ({ displayLanguages, renderModule, saveUserSettings, translations }) => {
-    document.title = translations.pageTitle;
-
+const Settings = ({ displayLanguages, renderModule, saveUserSettings, showLoadingAnimation, translations }) => {
     const selectedDisplayLanguage = displayLanguages.find((item) => item.isSelected) || { locale: 'de-DE' };
     const [displayLanguage = selectedDisplayLanguage.locale, setDisplayLanguage] = useState('de-DE');
+
+    if (showLoadingAnimation) {
+        return <div className="loadingAnimationContainer">
+            <div className="loadingAnimation"/>
+        </div>;
+    }
+
+    document.title = translations.pageTitle;
 
     if (!renderModule) {
         return null;
@@ -52,6 +58,7 @@ Settings.propTypes = {
     })).isRequired,
     renderModule: PropTypes.bool.isRequired,
     saveUserSettings: PropTypes.func.isRequired,
+    showLoadingAnimation: PropTypes.bool.isRequired,
     translations: PropTypes.shape({
         displayLanguageLabel: PropTypes.string.isRequired,
         pageTitle:  PropTypes.string.isRequired,

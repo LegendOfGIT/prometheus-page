@@ -15,7 +15,7 @@ const mapStateToProps = (state) => {
     return {
         informationItems,
         renderModule: MODULE_ID_ITEM_OVERVIEW === state.activeModule,
-        showLoadingAnimation: STATE_PENDING === state.currentState,
+        showLoadingAnimation: MODULE_ID_ITEM_OVERVIEW === state.activeModule && STATE_PENDING === state.currentState
     };
 };
 

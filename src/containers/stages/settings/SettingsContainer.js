@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Settings from '../../../components/stages/settings/Settings';
-import {MODULE_ID_SETTINGS} from '../../../constants';
+import {MODULE_ID_ITEM_OVERVIEW, MODULE_ID_SETTINGS, STATE_PENDING} from '../../../constants';
 import translations from '../../../configs/translations';
 import getTranslation from '../../../helpers/getTranslation';
 import { bindActionCreators } from 'redux';
@@ -25,6 +25,7 @@ const mapStateToProps = (state) => {
     return {
         displayLanguages,
         renderModule: MODULE_ID_SETTINGS === state.activeModule,
+        showLoadingAnimation: MODULE_ID_SETTINGS === state.activeModule && STATE_PENDING === state.currentState,
         translations: {
             displayLanguageLabel: getTranslation(state, 'SETTINGS_DISPLAY_LANGUAGE'),
             pageTitle: getTranslation(state, 'PAGE_TITLE'),
