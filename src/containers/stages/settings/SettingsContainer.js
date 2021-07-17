@@ -7,7 +7,6 @@ import { bindActionCreators } from 'redux';
 import saveUserSettings from '../../../actions/settings/saveUserSettings';
 
 const mapStateToProps = (state) => {
-
     const displayLanguages = Object.keys(translations).map(locale => {
         const languageLabel = getTranslation(state, `LANGUAGE_${locale.replace('-','_').toUpperCase()}`);
 
