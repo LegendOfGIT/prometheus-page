@@ -3,6 +3,8 @@ import addWishlistItemRepository from '../../repositories/wishlist/addWishlistIt
 import getCurrentUserId from '../user/getCurrentUserId';
 import removeWishlistItemRepository from '../../repositories/wishlist/removeWishlistItemRepository';
 import removeWishlistItemMockRepository from '../../repositories/wishlist/removeWishlistItemMockRepository';
+import addActivityRepository from '../../repositories/activities/addActivityRepository';
+import { ACTIVITY_ID_ADD_TO_WISHLIST, ACTIVITY_ID_REMOVE_FROM_WISHLIST } from '../../repositories/activities/addActivityRepository';
 import { MODULE_ID_ITEM_OVERVIEW } from '../../constants';
 import config from '../../config';
 
@@ -26,6 +28,12 @@ export default (itemId) => (dispatch, getState) => new Promise((resolve) => {
             dispatch({
                 type: isItemOnWishList ? 'REMOVE_ITEM_FROM_WISHLIST' : 'ADD_ITEM_TO_WISHLIST',
                 item
+            });
+
+            addActivityRepository({
+                activityId: isItemOnWishList ? ACTIVITY_ID_REMOVE_FROM_WISHLIST : ACTIVITY_ID_ADD_TO_WISHLIST,
+                userId,
+                itemId
             });
 
             state = getState();

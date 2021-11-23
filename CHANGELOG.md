@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### 2021-11-23
+- Added   | added first version of activity tracking (spv, wishlist)
+
 ### 2020-11-16
 - Added   | added rudimental spv
 - Changed | refactored styling to "mobile first"
